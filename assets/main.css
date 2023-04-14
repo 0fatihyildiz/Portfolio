@@ -1,0 +1,13 @@
+html,
+#__nuxt,
+body {
+  @apply h-full w-full;
+}
+
+body {
+  @apply bg-yellow-300 font-sans p-4;
+}
+
+.btn {
+  @apply transition-background duration-200 bg-black hover:(bg-black/80 -translate-y-0.5 shadow-sm) text-sm capitalize text-white font-bold py-2.5 px-6 rounded-full whitespace-nowrap;
+}

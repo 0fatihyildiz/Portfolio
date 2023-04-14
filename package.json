@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.23",
+    "@iconify-json/ph": "^1.1.5",
+    "@iconify-json/svg-spinners": "^1.1.1",
+    "@antfu/eslint-config": "^0.38.4",
+    "@unocss/nuxt": "^0.50.8",
+    "@unocss/preset-web-fonts": "^0.51.4",
+    "@unocss/transformer-variant-group": "^0.51.4",
+    "@vue-macros/nuxt": "^1.2.8",
+    "nuxt": "^3.4.1"
+  },
+  "dependencies": {
+    "@productdevbook/motion": "^1.0.3",
+    "@unocss/reset": "^0.51.4"
+  }
+}
