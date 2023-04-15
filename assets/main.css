@@ -5,9 +5,9 @@ body {
 }
 
 body {
-  @apply bg-yellow-300 font-sans p-4;
+  @apply bg-yellow-300 font-sans;
 }
 
 .btn {
-  @apply transition-background duration-200 bg-black hover:(bg-black/80 -translate-y-0.5 shadow-sm) text-sm capitalize text-white font-bold py-2.5 px-6 rounded-full whitespace-nowrap;
+  @apply transition-background duration-200 bg-yellow-300 hover:(bg-yellow-400/80 -translate-y-0.5 shadow-lg) text-sm capitalize text-zinc-900 font-bold py-2.5 px-6 rounded-full whitespace-nowrap;
 }
