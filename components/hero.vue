@@ -6,7 +6,7 @@
       </h1>
       <h1 class="title !text-5xl">
         I'm a <span class="text-zinc-900">Frontend Developer</span> from
-        <span class="text-zinc-900">Earth</span>
+        <span class="text-zinc-900">Turkey</span>
       </h1>
       <p class="subtitle">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, et delectus. Maiores dicta, deleniti eos et iusto alias mollitia officiis praesentium rerum explicabo autem ratione optio, dolorem, saepe repudiandae voluptas!
@@ -17,7 +17,7 @@
 
 <style lang="postcss" scoped>
     .title{
-        @apply inline-block relative text-6xl py-2 font-bold text-zinc-800;
+        @apply text-center inline-block relative text-6xl py-2 font-bold text-zinc-800;
 
         &.highlight{
             @apply p-4 rounded-lg bg-yellow-400 before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg border border-white);
