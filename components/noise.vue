@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const canvas = ref<HTMLCanvasElement | undefined>()
-const loop = ref(true)
 
 function resize() {
   const w = window.innerWidth
@@ -25,11 +24,6 @@ function noise(canvas: HTMLCanvasElement | undefined) {
 
 onMounted(() => {
   (function loopFrame() {
-    loop.value = !loop.value
-    if (loop.value) {
-      requestAnimationFrame(loopFrame)
-      return
-    }
     noise(canvas.value)
     requestAnimationFrame(loopFrame)
   })()
@@ -40,6 +34,6 @@ onMounted(() => {
 
 <template>
   <teleport to="body">
-    <canvas ref="canvas" class="z-20 fixed opacity-25 backdrop-blur-lg pointer-events-none select-none" />
+    <canvas ref="canvas" class="z-20 fixed opacity-20 backdrop-blur-lg pointer-events-none select-none" />
   </teleport>
 </template>
