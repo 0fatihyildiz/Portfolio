@@ -9,10 +9,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.38.4",
     "@iconify-json/logos": "^1.1.23",
     "@iconify-json/ph": "^1.1.5",
     "@iconify-json/svg-spinners": "^1.1.1",
-    "@antfu/eslint-config": "^0.38.4",
     "@unocss/nuxt": "^0.50.8",
     "@unocss/preset-web-fonts": "^0.51.4",
     "@unocss/transformer-variant-group": "^0.51.4",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@productdevbook/motion": "^1.0.3",
-    "@unocss/reset": "^0.51.4"
+    "@unocss/reset": "^0.51.4",
+    "vite-svg-loader": "^4.0.0"
   }
 }
