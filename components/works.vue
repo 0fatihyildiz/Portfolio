@@ -98,7 +98,8 @@ const works: Work[] = [
 </script>
 
 <template>
-  <div class="wContainer">
+  <section class="wContainer">
+    <!-- TODO: link -->
     <div v-for="work in works" :key="work.id" class="work">
       <div class="content">
         <div class="flex justify-between px-8 py-6">
@@ -122,9 +123,10 @@ const works: Work[] = [
         </div>
       </div>
       <div class="review">
+        <!-- TODO -->
         <div class="h-48 w-full p-12 flex items-center justify-center">
-          <div class="w-full flex justify-center border border-zinc-200 rounded-full px-12 py-6">
-            <Pattern class="h-12 w-12" />
+          <div class="pattern">
+            <Pattern class="h-12 w-12 text-zinc-950" />
           </div>
         </div>
         <div class="content">
@@ -139,6 +141,7 @@ const works: Work[] = [
             </div>
           </div>
           <div class="comments">
+            <!-- TODO -->
             <div v-for="comment in work.review.comments" :key="comment.name" class="comment">
               <div class="flex flex-col-reverse gap-4">
                 <div class="flex gap-4">
@@ -161,7 +164,7 @@ const works: Work[] = [
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="postcss" scoped>
@@ -202,7 +205,7 @@ const works: Work[] = [
         .tags {
           @apply relative flex justify-center gap-2 mt-4 after:(content-[''] absolute bottom-0 -left-10 w-12 h-full bg-gradient-to-r from-zinc-200 to-transparent) before:(content-[''] absolute bottom-0 -right-10 w-12 h-full bg-gradient-to-r from-transparent to-zinc-200);
           .tag {
-            @apply text-zinc-500 bg-white shadow-sm rounded-full py-1 px-8 font-medium whitespace-nowrap;
+            @apply text-zinc-900 bg-white shadow-sm rounded-full py-1 px-8 font-medium whitespace-nowrap;
           }
         }
         .comments {
