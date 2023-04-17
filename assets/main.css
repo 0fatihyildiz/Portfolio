@@ -15,3 +15,7 @@ body {
 .btn {
   @apply transition-background duration-200 bg-yellow-300 hover:(bg-yellow-400/80 -translate-y-0.5 shadow-lg) text-sm capitalize text-zinc-900 font-bold py-2.5 px-6 rounded-full whitespace-nowrap;
 }
+
+.pattern {
+  @apply min-w-48 flex-grow-0 flex justify-center bg-white border border-zinc-100 overflow-hidden rounded-full px-12 py-6 relative after:(content-[''] h-12 w-12 bg-zinc-100 absolute -left-10 rotate-45) before:(content-[''] h-12 w-12 bg-zinc-100 absolute -right-10 rotate-45);
+}
