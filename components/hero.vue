@@ -20,7 +20,7 @@
         @apply text-center inline-block relative text-6xl py-2 font-bold text-zinc-800;
 
         &.highlight{
-            @apply p-4 rounded-lg bg-yellow-400 before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg border border-white);
+            @apply p-4 rounded-lg bg-yellow-400 before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg border border-zinc-950/50 pointer-events-none);
         }
     }
 
