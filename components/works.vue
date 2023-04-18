@@ -222,7 +222,7 @@ const works: Work[] = [
               @apply text-sm capitalize text-zinc-500;
             }
             .commentMessage {
-              @apply relative font-bold text-xl text-zinc-800 before:(content-['\\201C'] text-4xl text-zinc-400);
+              @apply relative z-10 font-semibold text-lg text-zinc-800 before:(content-['\\201C'] text-8xl absolute -z-10 text-zinc-200);
             }
           }
         }

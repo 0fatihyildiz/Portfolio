@@ -55,7 +55,7 @@ function getHeight(el: HTMLParagraphElement) {
           <h1 class="title">
             {{ question.title }}
           </h1>
-          <div class="i-ph-triangle-fill h-3 w-3 transition duration-300" :class="question.active ? 'rotate-0' : 'rotate-180' " />
+          <div class="i-ph-triangle-fill h-2 w-2 transition duration-300" :class="question.active ? 'rotate-0' : 'rotate-180' " />
         </div>
         <div class="transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
           <p
@@ -65,6 +65,11 @@ function getHeight(el: HTMLParagraphElement) {
             {{ question.description }}
           </p>
         </div>
+      </button>
+    </div>
+    <div class="mx-auto w-full flex justify-center pt-12">
+      <button class="btn">
+        Contact Me
       </button>
     </div>
   </section>
@@ -92,7 +97,7 @@ function getHeight(el: HTMLParagraphElement) {
       @apply transition-all ease-in-out rounded-xl p-6 border border-zinc-100 w-full flex flex-col scale-100 cursor-pointer;
 
       &.active {
-        @apply bg-gray-100 scale-102 pb-12;
+        @apply bg-gray-50 scale-102 pb-12;
 
         .description {
           @apply opacity-100 mt-4;
@@ -100,11 +105,11 @@ function getHeight(el: HTMLParagraphElement) {
       }
 
       .title {
-        @apply text-xl font-bold;
+        @apply text-xl font-medium;
       }
 
       .description {
-        @apply transition-all text-left ease-in-out text-gray-600 dark:text-gray-400 opacity-0;
+        @apply transition-all text-left ease-in-out text-zinc-900 dark:text-gray-400 opacity-0;
       }
     }
   }

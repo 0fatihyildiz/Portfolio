@@ -7,7 +7,7 @@ const props = defineProps<{
   width?: number
 }>()
 
-const random = Math.floor(Math.random() * 60) + 1
+const random = (Math.floor(Math.random() * 60) + 1)
 
 const icon = defineAsyncComponent(() =>
   import(`../assets/patterns/${props.name ? props.name : random}.svg`),

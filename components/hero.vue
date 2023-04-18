@@ -1,5 +1,11 @@
 <template>
-  <section>
+  <section class="relative">
+    <div class="pattern -translate-y-1/2 absolute top-2/3 -right-80">
+      <Pattern class="h-6 w-6 text-zinc-950" />
+    </div>
+    <div class="pattern -translate-y-1/2 absolute top-2/3 -left-80">
+      <Pattern class="h-6 w-6 text-zinc-950" />
+    </div>
     <div class="flex flex-col items-center space-y-4 py-24">
       <h1 class="title highlight">
         Hi, I'm <span class="text-zinc-900">Fatih Yildiz</span>
