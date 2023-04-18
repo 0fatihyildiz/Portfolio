@@ -14,7 +14,13 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['/assets/main.css'],
+  css: ['~/assets/main.postcss'],
+  postcss: {
+    plugins: {
+      'postcss-nested': {},
+      'postcss-import': true,
+    },
+  },
   modules: [
     '@unocss/nuxt',
     '@productdevbook/motion/nuxt',
