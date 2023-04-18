@@ -34,6 +34,6 @@ onMounted(() => {
 
 <template>
   <teleport to="body">
-    <canvas ref="canvas" class="z-20 fixed opacity-20 backdrop-blur-lg pointer-events-none select-none" />
+    <canvas ref="canvas" class="z-20 fixed opacity-15 backdrop-blur-lg pointer-events-none select-none" />
   </teleport>
 </template>
