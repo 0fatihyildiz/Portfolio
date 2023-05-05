@@ -5,15 +5,15 @@ import '@unocss/reset/tailwind.css'
 <template>
   <main>
     <Noise />
-    <!-- <Cookie /> -->
+    <Cookie />
     <div class="content">
       <Header />
       <Hero />
       <Stats />
       <Works />
       <About />
-      <!-- <Cta />
-      <Footer /> -->
+      <Cta />
+      <Footer />
     </div>
   </main>
 </template>
