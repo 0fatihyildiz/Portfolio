@@ -1,13 +1,15 @@
 <script setup lang="ts">
 const navigation = [
-  { name: 'About', href: '#' },
-  { name: 'Works', href: '#' },
+  { name: 'About', href: '#about' },
+  { name: 'Works', href: '#works' },
 ]
 
 const social = [
   { name: 'Twitter', href: '#' },
   { name: 'GitHub', href: '#' },
 ]
+
+// const route = useRoute()
 </script>
 
 <template>
@@ -45,7 +47,7 @@ const social = [
 
 <style lang="postcss" scoped>
 header {
-  @apply bg-white px-4 py-2 rounded-full shadow-sm flex space-x-4 items-center;
+  @apply bg-white/80 backdrop-filter backdrop-blur-lg px-4 py-2 rounded-full shadow-sm flex space-x-4 items-center sticky top-0 z-20;
 
   .logo {
     @apply w-12 h-12 bg-yellow-500 rounded-full border-2 border-zinc-300;
