@@ -10,7 +10,7 @@ const props = defineProps<{
 const random = (Math.floor(Math.random() * 60) + 1)
 
 const icon = defineAsyncComponent(() =>
-  import(`../assets/patterns/${props.name ? props.name : random}.svg`),
+  import(`../../assets/patterns/${props.name ? props.name : random}.svg`),
 )
 </script>
 

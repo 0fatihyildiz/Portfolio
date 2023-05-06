@@ -126,7 +126,7 @@ const works: Work[] = [
         <!-- TODO -->
         <div class="h-48 w-full p-12 flex items-center justify-center">
           <div class="pattern">
-            <Pattern class="h-12 w-12 text-zinc-950" />
+            <OtherPattern class="h-12 w-12 text-zinc-950" />
           </div>
         </div>
         <div class="content">
@@ -169,7 +169,7 @@ const works: Work[] = [
 
 <style lang="postcss" scoped>
 .wContainer {
-  @apply w-full flex flex-col gap-6 py-24 w-full mt-36;
+  @apply w-full flex flex-col gap-6 pt-24 w-full mt-36;
 
   .work {
     @apply flex gap-6 w-full;

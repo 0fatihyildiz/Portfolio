@@ -4,8 +4,8 @@ import '@unocss/reset/tailwind.css'
 
 <template>
   <main>
-    <Noise />
-    <Cookie />
+    <OtherNoise />
+    <OtherCookie />
     <div class="content">
       <Header />
       <Hero />

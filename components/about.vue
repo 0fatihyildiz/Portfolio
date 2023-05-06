@@ -31,10 +31,10 @@ function getHeight(el: HTMLParagraphElement) {
 </script>
 
 <template>
-  <section class="about">
+  <section id="about" class="about">
     <div class="titleWrap">
       <div class="pattern">
-        <Pattern class="h-12 w-12 text-zinc-950" />
+        <OtherPattern class="h-12 w-12 text-zinc-950" />
       </div>
       <h2 class="title">
         Your questions, answered
@@ -77,7 +77,7 @@ function getHeight(el: HTMLParagraphElement) {
 
 <style lang="postcss" scoped>
 .about {
-  @apply bg-white rounded-xl shadow-sm px-6 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto;
+  @apply bg-white rounded-xl shadow-sm px-6 py-10 mt-10 sm:px-6 lg:px-8 lg:py-14 mx-auto;
 
   .titleWrap {
     @apply mx-auto flex flex-col space-y-4 items-center text-center mb-10 lg:mb-14;
