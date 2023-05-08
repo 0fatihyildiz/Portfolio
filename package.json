@@ -18,7 +18,7 @@
     "@unocss/preset-web-fonts": "^0.51.4",
     "@unocss/transformer-variant-group": "^0.51.4",
     "@vue-macros/nuxt": "^1.2.8",
-    "nuxt": "^3.4.2",
+    "nuxt": "^3.4.3",
     "postcss": "^8.4.22",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
