@@ -82,7 +82,7 @@ const works: Work[] = [
 </script>
 
 <template>
-  <section class="wContainer">
+  <section id="works" class="wContainer">
     <!-- TODO: link -->
     <div v-for="work in works" :key="work.id" class="work">
       <div class="content">

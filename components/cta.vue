@@ -11,6 +11,6 @@
         <a href="" class="btn border border-white">Let's Talk to me</a>
       </div>
     </div>
-    <img src="@/assets/videos/want.gif" class="w-full h-full object-cover absolute left-1/2 -translate-x-1/2 -z-10">
+    <img src="https://res.cloudinary.com/fatihex/image/upload/v1683527419/want_sdebap.gif" class="w-full h-full object-cover absolute left-1/2 -translate-x-1/2 -z-10">
   </div>
 </template>

@@ -13,12 +13,9 @@ const stats = [
 
 <template>
   <div class="stats">
-    <h2 class="mb-12 text-xl font-semibold mx-auto text-gray-800 dark:text-gray-200">
-      Trusted by Open Source, enterprise, and more than 99,000 of you
-    </h2>
     <dl class="statsWrap">
       <a v-for="stat in stats" :key="stat.id" class="flex justify-between">
-        <div class="w-12 h-12" :class="stat.icon" />
+        <div class="w-10 h-10 grayscale" :class="stat.icon" />
       </a>
     </dl>
     <!-- <span class="sr-only i-logos-typescript-icon i-logos-vue i-logos-nuxt-icon i-logos-react i-logos-nextjs-icon i-logos-postcss i-logos-supabase-icon i-logos-firebase" /> -->
@@ -27,7 +24,7 @@ const stats = [
 
 <style lang="postcss" scoped>
 .stats {
-  @apply bg-white shadow-sm py-12 flex flex-col justify-center rounded-lg mt-12 px-6;
+  @apply bg-white shadow-sm py-12 flex flex-col justify-center rounded-full mt-12 px-6;
 
   .statsWrap {
     @apply flex justify-around px-12 w-full;

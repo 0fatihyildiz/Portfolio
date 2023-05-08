@@ -19,7 +19,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
         </Motion>
         <Motion :initial="initialKeyframes" :in-view="animateKeyframes" :transition="transition(0.5)">
           <p class="subtitle">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, et delectus. Maiores dicta, deleniti eos et iusto alias mollitia officiis praesentium rerum explicabo autem ratione optio, dolorem, saepe repudiandae voluptas!
+            I'm passionate about frontend development and design, always seeking new challenges and opportunities to learn.
           </p>
         </Motion>
       </PresenceGroup>

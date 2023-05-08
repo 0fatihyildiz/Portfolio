@@ -1,33 +1,35 @@
 <script setup lang="ts">
 const navigation = [
-  { name: 'About', href: '#about' },
   { name: 'Works', href: '#works' },
+  { name: 'About', href: '#about' },
 ]
 
 const social = [
-  { name: 'Twitter', href: '#' },
-  { name: 'GitHub', href: '#' },
+  { name: 'Twitter', href: 'https://twitter.com/0fatihyildiz' },
+  { name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
 ]
-
-// const route = useRoute()
 </script>
 
 <template>
   <header>
-    <img
-      class="logo"
-      src="https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4"
-      alt="logo"
-    >
+    <NuxtLink class="flex-shrink-0" to="/">
+      <img
+        class="logo"
+        src="https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4"
+        alt="logo"
+      >
+    </NuxtLink>
+
     <div class="flex items-center w-full divide-x divide-zinc-200 space-x-6">
       <nav class="nav">
-        <a
+        <NuxtLink
           v-for="(link, index) in navigation"
           :key="index"
           class="link"
-          :href="link.href"
+          :to="{ hash: link.href }"
         >
-          {{ link.name }}</a>
+          {{ link.name }}
+        </NuxtLink>
       </nav>
       <nav class="nav">
         <a
@@ -35,6 +37,7 @@ const social = [
           :key="index"
           class="link"
           :href="link.href"
+          target="_blank"
         >
           {{ link.name }}</a>
       </nav>
