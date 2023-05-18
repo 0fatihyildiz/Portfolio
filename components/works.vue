@@ -153,7 +153,7 @@ const works: Work[] = [
 
 <style lang="postcss" scoped>
 .wContainer {
-  @apply w-full flex flex-col gap-6 pt-24 w-full mt-36;
+  @apply w-full flex flex-col gap-6 w-full;
 
   .work {
     @apply flex gap-6 w-full;
