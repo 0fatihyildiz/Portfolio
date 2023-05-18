@@ -3,28 +3,26 @@ const stats = [
   { id: 1, icon: 'i-logos-typescript-icon', href: 'https://www.typescriptlang.org/' },
   { id: 2, icon: 'i-logos-vue', href: 'https://vuejs.org/' },
   { id: 3, icon: 'i-logos-nuxt-icon', href: 'https://nuxt.com/' },
-  { id: 4, icon: 'i-logos-react', href: 'https://react.dev/' },
-  { id: 5, icon: 'i-logos-nextjs-icon', href: 'https://nextjs.org/' },
-  { id: 6, icon: 'i-logos-supabase-icon', href: 'https://supabase.com/' },
-  { id: 7, icon: 'i-logos-firebase', href: 'https://firebase.google.com/' },
-  { id: 8, icon: 'i-logos-postcss', href: 'https://postcss.org/' },
+  { id: 4, icon: 'i-logos-supabase-icon', href: 'https://supabase.com/' },
+  { id: 5, icon: 'i-logos-firebase', href: 'https://firebase.google.com/' },
+  { id: 6, icon: 'i-logos-postcss', href: 'https://postcss.org/' },
 ]
 </script>
 
 <template>
   <div class="stats">
     <dl class="statsWrap">
-      <a v-for="stat in stats" :key="stat.id" class="flex justify-between">
-        <div class="w-10 h-10 grayscale" :class="stat.icon" />
+      <a v-for="stat in stats" :key="stat.id" class="flex justify-around">
+        <div class="w-8 h-8 grayscale" :class="stat.icon" />
       </a>
     </dl>
-    <!-- <span class="sr-only i-logos-typescript-icon i-logos-vue i-logos-nuxt-icon i-logos-react i-logos-nextjs-icon i-logos-postcss i-logos-supabase-icon i-logos-firebase" /> -->
+    <span class="sr-only i-logos-typescript-icon i-logos-vue i-logos-nuxt-icon i-logos-postcss i-logos-supabase-icon i-logos-firebase" />
   </div>
 </template>
 
 <style lang="postcss" scoped>
 .stats {
-  @apply bg-white shadow-sm py-12 flex flex-col justify-center rounded-full mt-12 px-6;
+  @apply bg-white max-w-3xl mx-auto shadow-sm py-8 flex flex-col justify-center rounded-full mt-12 px-6 mb-36;
 
   .statsWrap {
     @apply flex justify-around px-12 w-full;
