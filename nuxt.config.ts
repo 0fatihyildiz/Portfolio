@@ -24,8 +24,5 @@ export default defineNuxtConfig({
       'postcss-import': true,
     },
   },
-  modules: [
-    '@unocss/nuxt',
-    '@productdevbook/motion/nuxt',
-  ],
+  modules: ['@unocss/nuxt', '@productdevbook/motion/nuxt', '@vueuse/nuxt'],
 })
