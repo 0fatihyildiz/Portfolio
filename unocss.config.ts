@@ -16,10 +16,10 @@ export default defineConfig({
     presetTypography(),
     presetIcons(),
     presetWebFonts({
-      provider: 'fontshare',
+      provider: 'bunny',
       fonts: {
         sans: {
-          name: 'Satoshi',
+          name: 'Albert Sans',
           weights: [300, 400, 500, 600, 700],
         },
       },
