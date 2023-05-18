@@ -8,7 +8,9 @@ import '@unocss/reset/tailwind.css'
     <OtherCookie />
     <NuxtLayout>
       <div class="content">
-        <LayoutHeader />
+        <ClientOnly>
+          <LayoutHeader />
+        </ClientOnly>
         <NuxtPage />
         <LayoutFooter />
       </div>
@@ -18,7 +20,7 @@ import '@unocss/reset/tailwind.css'
 
 <style lang="postcss">
 main {
-  @apply bg-gray-50 border border-12 border-yellow-300 h-full w-full py-6 px-4 overflow-y-auto;
+  @apply bg-gray-50 border border-12 border-yellow-300 py-6 px-4;
 
   .content {
     @apply max-w-6xl mx-auto;

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { y, directions } = useScroll(window)
+const direction = ref(false)
+
 const navigation = [
   { name: 'Works', href: '#works' },
   { name: 'About', href: '#about' },
@@ -8,10 +11,17 @@ const social = [
   { name: 'Twitter', href: 'https://twitter.com/0fatihyildiz' },
   { name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
 ]
+
+watchEffect(() => {
+  if (directions.top)
+    direction.value = true
+  else if (directions.bottom || y.value <= 100)
+    direction.value = false
+})
 </script>
 
 <template>
-  <header>
+  <header :class="{ active: direction }">
     <NuxtLink class="flex-shrink-0" to="/">
       <img
         class="logo"
@@ -19,7 +29,6 @@ const social = [
         alt="logo"
       >
     </NuxtLink>
-
     <div class="flex items-center w-full divide-x divide-zinc-200 space-x-6">
       <nav class="nav">
         <NuxtLink
@@ -50,7 +59,11 @@ const social = [
 
 <style lang="postcss" scoped>
 header {
-  @apply bg-white/80 backdrop-filter backdrop-blur-lg px-4 py-2 rounded-full shadow-sm flex space-x-4 items-center sticky top-0 z-20;
+  @apply transition-all duration-400  bg-white/80 backdrop-filter backdrop-blur-lg px-4 py-2 rounded-full shadow-sm flex space-x-4 items-center sticky -top-15 z-20;
+
+  &.active {
+    @apply top-5 drop-shadow-xl;
+  }
 
   .logo {
     @apply w-12 h-12 bg-yellow-500 rounded-full border-2 border-zinc-300;
