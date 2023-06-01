@@ -22,7 +22,6 @@
     "@iconify-json/ph": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.53",
     "@iconify-json/svg-spinners": "^1.1.1",
-    "@parcel/watcher": "^2.1.0",
     "@unocss/eslint-config": "^0.51.13",
     "@unocss/nuxt": "^0.50.8",
     "@unocss/preset-web-fonts": "^0.51.4",
