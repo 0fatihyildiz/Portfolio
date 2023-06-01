@@ -22,6 +22,8 @@ export default defineNuxtConfig({
     plugins: {
       'postcss-nested': {},
       'postcss-import': true,
+      'postcss-hexrgba': true,
+      'cssnano': true,
     },
   },
   modules: ['@unocss/nuxt', '@productdevbook/motion/nuxt', '@vueuse/nuxt'],

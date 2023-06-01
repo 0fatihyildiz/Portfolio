@@ -51,7 +51,7 @@ function getHeight(el: HTMLParagraphElement) {
         :class="{ active: question.active }"
         @click="toggleAcordion(index)"
       >
-        <div class="w-full flex justify-between items-center">
+        <div class="w-full flex items-center justify-between">
           <h1 class="title">
             {{ question.title }}
           </h1>

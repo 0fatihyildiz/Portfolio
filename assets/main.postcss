@@ -1,3 +1,7 @@
+:root {
+  --color-primary: #64748b;
+}
+
 html,
 #__nuxt,
 body {
@@ -5,35 +9,31 @@ body {
 }
 
 body {
-  @apply bg-yellow-300 font-sans;
+  @apply bg-primary font-sans;
 }
 
 ::selection {
-  @apply bg-yellow-300/50;
+  @apply bg-[rgba(var(--color-primary), 0.2)];
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-transparent
+  @apply bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-black
+  @apply bg-black;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-black/70
+  @apply bg-black/70;
 }
 
 section {
   @apply max-w-6xl mx-auto;
-}
-
-.btn {
-  @apply transition-background duration-200 bg-black hover:(bg-black/80 -translate-y-0.5 shadow-lg) text-sm capitalize text-white font-bold py-3 px-8 rounded-full whitespace-nowrap;
 }
 
 .pattern {

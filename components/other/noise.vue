@@ -23,17 +23,17 @@ function noise(canvas: HTMLCanvasElement | undefined) {
 }
 
 onMounted(() => {
-  (function loopFrame() {
+  window.addEventListener('resize', () => {
+    resize()
     noise(canvas.value)
-    requestAnimationFrame(loopFrame)
-  })()
-  window.addEventListener('resize', resize)
+  })
   resize()
+  noise(canvas.value)
 })
 </script>
 
 <template>
   <teleport to="body">
-    <canvas ref="canvas" class="z-30 fixed opacity-20 backdrop-blur-lg pointer-events-none select-none" />
+    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-20 backdrop-blur-lg" />
   </teleport>
 </template>

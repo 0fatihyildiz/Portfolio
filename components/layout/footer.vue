@@ -1,9 +1,9 @@
 <template>
   <footer>
-    <div class="py-10 mx-auto">
+    <div class="mx-auto py-10">
       <!-- Grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center"
+        class="grid grid-cols-1 items-center gap-5 text-center md:grid-cols-3"
       >
         <img
           class="logo"
@@ -17,6 +17,6 @@
 
 <style lang="postcss" scoped>
 .logo {
-  @apply w-12 h-12 bg-yellow-500 rounded-full border-2 border-zinc-300;
+  @apply w-12 h-12 bg-primary rounded-full border-2 border-zinc-300;
 }
 </style>

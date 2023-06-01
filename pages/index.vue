@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <Hero />
-    <Stats />
-    <Works />
-    <About />
-    <Cta />
-  </div>
+  <Hero />
+  <Stats />
+  <Works />
+  <About />
+  <!-- <Cta /> -->
 </template>

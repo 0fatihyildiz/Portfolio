@@ -24,16 +24,16 @@ function agree() {
 </script>
 
 <template>
-  <Presence class="fixed bottom-0 right-0 z-[60] sm:max-w-xl w-full mx-auto p-6">
+  <Presence class="fixed bottom-0 right-0 z-[60] mx-auto w-full p-6 sm:max-w-xl">
     <Motion
       v-if="show" :initial="initial" :animate="animate" :exit="initial" :transition="{
         duration: 0.5,
         easing: spring({ velocity: 200 }),
       }"
     >
-      <div class="p-4 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <div class="border border-gray-200 rounded-xl bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800">
         <div class="flex gap-x-5">
-          <svg class="hidden sm:block flex-shrink-0 w-20" width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="hidden w-20 flex-shrink-0 sm:block" width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.5174 56.1528C16.2903 57.6825 16.929 61.4559 14.8118 60.9459C13.5013 60.5381 11.4445 57.6213 12.493 56.1528C12.661 55.8468 13.2189 55.2757 14.106 55.4389" stroke="currentColor" class="dark:stroke-gray-200" stroke-width="2" stroke-linecap="round" />
             <path d="M15.5173 49.6263L14.0262 48.5579C13.5346 48.2056 12.8477 48.3707 12.658 48.945C12.3456 49.8907 12.1258 51.1463 12.462 52.2324C12.5336 52.4636 12.7127 52.6466 12.9449 52.7146C13.8342 52.9751 15.2568 52.9048 15.8197 51.054" stroke="currentColor" class="dark:stroke-gray-200" stroke-width="2" stroke-linecap="round" />
             <mask id="path-3-inside-1_4542_101166" fill="currentColor" class="text-gray-800 dark:fill-gray-200">
@@ -72,10 +72,10 @@ function agree() {
               We are using cookies to improve your experience!
             </h2>
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              By clicking "Allow all", you agree to use of all cookies. Visit our <a class="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium" href="#">Cookies Policy</a> to learn more.
+              By clicking "Allow all", you agree to use of all cookies. Visit our <a class="inline-flex items-center gap-x-1.5 font-medium text-blue-600 decoration-2 hover:underline" href="#">Cookies Policy</a> to learn more.
             </p>
             <div class="mt-5 inline-flex gap-x-2">
-              <button type="button" class="!bg-yellow-300 text-zinc-950 btn" @click="agree">
+              <button type="button" class="text-zinc-950 !bg-primary btn" @click="agree">
                 Okey
               </button>
             </div>

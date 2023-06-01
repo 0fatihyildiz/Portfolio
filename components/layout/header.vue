@@ -8,8 +8,8 @@ const navigation = [
 ]
 
 const social = [
-  { name: 'Twitter', href: 'https://twitter.com/0fatihyildiz' },
-  { name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
+  { icon: 'i-simple-icons-twitter', name: 'Twitter', href: 'https://twitter.com/0fatihyildiz' },
+  { icon: 'i-simple-icons-github', name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
 ]
 
 watchEffect(() => {
@@ -29,44 +29,52 @@ watchEffect(() => {
         alt="logo"
       >
     </NuxtLink>
-    <div class="flex items-center w-full divide-x divide-zinc-200 space-x-6">
-      <nav class="nav">
-        <NuxtLink
-          v-for="(link, index) in navigation"
-          :key="index"
-          class="link"
-          :to="{ hash: link.href }"
-        >
-          {{ link.name }}
-        </NuxtLink>
-      </nav>
-      <nav class="nav">
-        <a
-          v-for="(link, index) in social"
-          :key="index"
-          class="link"
-          :href="link.href"
-          target="_blank"
-        >
-          {{ link.name }}</a>
-      </nav>
+    <div class="hidden w-full items-center justify-between md:flex">
+      <div class="flex items-center rgba-[#fff] space-x-6 divide-x divide-zinc-200">
+        <nav class="nav">
+          <FormLink
+            v-for="(link, index) in navigation"
+            :key="index"
+            class="link"
+            :href="link.href"
+          >
+            {{ link.name }}
+          </FormLink>
+        </nav>
+        <nav class="nav">
+          <FormLink
+            v-for="(link, index) in social"
+            :key="index"
+            class="link"
+            :href="link.href"
+            target="_blank"
+          >
+            <i :class="link.icon" class="group-hover:text-primary inline-block text-sm text-zinc-500 transition" />
+            {{ link.name }}
+          </FormLink>
+        </nav>
+      </div>
+      <button class="btn">
+        Contact Me
+      </button>
     </div>
-    <button class="btn">
-      Contact Me
+    <button class="flex items-center rounded-full px-4 py-1 md:hidden hover:bg-zinc-500/5">
+      <i class="i-ph-list-bold inline-block text-2xl" />
     </button>
   </header>
 </template>
 
 <style lang="postcss" scoped>
 header {
-  @apply transition-all duration-400  bg-white/80 backdrop-filter backdrop-blur-lg px-4 py-2 rounded-full shadow-sm flex space-x-4 items-center sticky -top-15 z-20;
+  @apply transition-all drop-shadow-sm bg-white duration-400 px-4 py-2 rounded-full flex space-x-4 items-center justify-between sticky -top-20 z-20;
+  animation: initialAnimation 1s ease-in-out;
 
   &.active {
     @apply top-5 drop-shadow-xl;
   }
 
   .logo {
-    @apply w-12 h-12 bg-yellow-500 rounded-full border-2 border-zinc-300;
+    @apply w-12 h-12 bg-primary rounded-full border-2 border-zinc-300;
   }
 
   .nav {
@@ -74,6 +82,20 @@ header {
 
     .link {
       @apply inline-flex font-medium text-zinc-800 hover:text-zinc-950 text-shadow-sm text-sm;
+    }
+  }
+
+  @keyframes initialAnimation {
+    0% {
+      transform: translateY(-100px);
+      filter: drop-shadow(0, 20, 13px, rgba(0, 0, 0, 0.05));
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+      filter: drop-shadow(0, 0, 1px, rgba(0, 0, 0, 0.05));
     }
   }
 }

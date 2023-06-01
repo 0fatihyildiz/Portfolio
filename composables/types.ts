@@ -7,12 +7,6 @@ interface Work {
   review: {
     explain: string
     tags: string[]
-    comments: {
-      avatar: string
-      name: string
-      job_title: string
-      comment: string
-    }[]
   }
 }
 

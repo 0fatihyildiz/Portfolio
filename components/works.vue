@@ -12,32 +12,6 @@ const works: Work[] = [
     review: {
       explain: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
       tags: ['Vue', 'CSS-in-JS', 'Utility-first'],
-      comments: [
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'Frontend Developer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'Frontend Developer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'Frontend Developer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-      ],
     },
   },
   {
@@ -50,32 +24,6 @@ const works: Work[] = [
     review: {
       explain: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
       tags: ['Vue', 'CSS-in-JS', 'Utility-first'],
-      comments: [
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'customer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'customer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-        {
-          avatar:
-            'https://avatars.githubusercontent.com/u/47571500?s=400&u=7a5272427cd5185f06e20e14d28e650d43359ffe&v=4',
-          name: 'John Doe',
-          job_title: 'customer',
-          comment:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-        },
-      ],
     },
   },
 ]
@@ -97,7 +45,7 @@ const works: Work[] = [
           </div>
           <a
             :href="work.link"
-            class="transition border border-zinc-200 hover:(border-transparent bg-yellow-300) rounded-full p-2"
+            class="border border-zinc-200 rounded-full p-2 transition hover:(border-transparent bg-primary bg-opacity-40)"
           >
             <div class="i-ph-arrow-up-right h-12 w-12" />
           </a>
@@ -108,7 +56,7 @@ const works: Work[] = [
       </div>
       <div class="review">
         <!-- TODO -->
-        <div class="h-48 w-full p-12 flex items-center justify-center">
+        <div class="h-1/3 w-full flex items-center justify-center p-12">
           <div class="pattern">
             <OtherPattern class="h-12 w-12 text-zinc-950" />
           </div>
@@ -121,27 +69,6 @@ const works: Work[] = [
             <div class="tags">
               <div v-for="tag in work.review.tags" :key="tag" class="tag">
                 {{ tag }}
-              </div>
-            </div>
-          </div>
-          <div class="comments">
-            <!-- TODO -->
-            <div v-for="comment in work.review.comments" :key="comment.name" class="comment">
-              <div class="flex flex-col-reverse gap-4">
-                <div class="flex gap-4">
-                  <img class="avatar" :src="comment.avatar" :alt="comment.name">
-                  <div class="-space-y-1">
-                    <h1 class="name">
-                      {{ comment.name }}
-                    </h1>
-                    <h3 class="job_title">
-                      {{ comment.job_title }}
-                    </h3>
-                  </div>
-                </div>
-                <p class="commentMessage">
-                  {{ comment.comment }}
-                </p>
               </div>
             </div>
           </div>
@@ -163,12 +90,12 @@ const works: Work[] = [
     }
 
     .content {
-      @apply w-2/3 bg-white rounded-xl shadow-sm flex flex-col gap-2 p-4;
+      @apply w-full md:w-2/3 bg-white rounded-xl shadow-sm flex flex-col gap-2 p-4;
       .title {
         @apply text-4xl font-bold;
       }
       .description {
-        @apply font-medium text-zinc-500;
+        @apply font-medium text-zinc-500 block md:hidden;
       }
 
       .photoContainer {
@@ -179,10 +106,10 @@ const works: Work[] = [
       }
     }
     .review {
-      @apply w-1/3 bg-white rounded-xl shadow-sm flex flex-col gap-2 p-4;
+      @apply w-1/3 bg-white rounded-xl shadow-sm hidden md:flex flex-col gap-2 p-4;
 
       .content {
-        @apply flex flex-col justify-between overflow-hidden shadow-inset shadow-sm flex-col gap-2 bg-zinc-100 pt-24 w-full h-full p-4;
+        @apply flex flex-col justify-center overflow-hidden shadow-inset shadow-sm flex-col gap-2 bg-zinc-100 w-full h-2/3 p-4;
         .explain {
           @apply text-2xl font-bold text-center;
         }
@@ -190,24 +117,6 @@ const works: Work[] = [
           @apply relative flex justify-center gap-2 mt-4 after:(content-[''] absolute bottom-0 -left-10 w-12 h-full bg-gradient-to-r from-zinc-200 to-transparent) before:(content-[''] absolute bottom-0 -right-10 w-12 h-full bg-gradient-to-r from-transparent to-zinc-200);
           .tag {
             @apply text-zinc-900 bg-white shadow-sm rounded-full py-1 px-8 font-medium whitespace-nowrap;
-          }
-        }
-        .comments {
-          @apply relative flex gap-4 mt-4;
-          .comment {
-            @apply flex flex-shrink-0 w-full bg-white p-4 rounded-lg shadow-sm flex-col gap-2;
-            .avatar {
-              @apply rounded-full w-10 h-10 object-cover;
-            }
-            .name {
-              @apply font-medium text-shadow-sm;
-            }
-            .job_title {
-              @apply text-sm capitalize text-zinc-500;
-            }
-            .commentMessage {
-              @apply relative z-10 font-semibold text-lg text-zinc-800 before:(content-['\\201C'] text-8xl absolute -z-10 text-zinc-200);
-            }
           }
         }
       }

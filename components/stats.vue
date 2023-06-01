@@ -12,11 +12,10 @@ const stats = [
 <template>
   <div class="stats">
     <dl class="statsWrap">
-      <a v-for="stat in stats" :key="stat.id" class="flex justify-around">
-        <div class="w-8 h-8 grayscale" :class="stat.icon" />
-      </a>
+      <FormLink v-for="stat in stats" :key="stat.id" :href="stat.href" target="_blank" class="rgba- flex justify-around py-2 grayscale transition-filter hover:grayscale-0">
+        <div class="h-8 w-8" :class="stat.icon" />
+      </FormLink>
     </dl>
-    <span class="sr-only i-logos-typescript-icon i-logos-vue i-logos-nuxt-icon i-logos-postcss i-logos-supabase-icon i-logos-firebase" />
   </div>
 </template>
 
