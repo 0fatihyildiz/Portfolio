@@ -9,7 +9,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-import hexToRgba from './transformers/hextorgba.ts'
+// import hexToRgba from './transformers/hextorgba.ts'
 
 export default defineConfig({
   theme: {
@@ -56,6 +56,6 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
-    hexToRgba(),
+    // hexToRgba(),
   ],
 })
