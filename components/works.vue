@@ -45,7 +45,7 @@ const works: Work[] = [
           </div>
           <a
             :href="work.link"
-            class="border border-zinc-200 rounded-full p-2 transition hover:(border-transparent bg-primary bg-opacity-40)"
+            class="border border-zinc-200 rounded-full p-2 transition hover:(border-transparent bg-[rgba(var(--primary),0.4)])"
           >
             <div class="i-ph-arrow-up-right h-12 w-12" />
           </a>

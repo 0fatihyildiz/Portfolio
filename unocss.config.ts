@@ -14,7 +14,7 @@ import {
 export default defineConfig({
   theme: {
     colors: {
-      primary: 'var(--color-primary)',
+      primary: 'rgb(var(--primary))',
     },
   },
   safelist: [

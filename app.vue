@@ -21,7 +21,7 @@ import '@unocss/reset/tailwind.css'
 
 <style lang="postcss">
 main {
-  @apply bg-zinc-50 border border-12 border-primary/30 py-6 px-4 ;
+  @apply bg-zinc-50 border border-12 border-[rgba(var(--primary),0.2)] py-6 px-4 ;
 
   .content {
     @apply max-w-6xl mx-auto;

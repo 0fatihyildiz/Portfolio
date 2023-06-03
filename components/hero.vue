@@ -4,8 +4,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
 
 <template>
   <section class="relative">
-    <div class="rgba-bg-[#000000] flex flex-col items-center py-24 space-y-4">
-      test
+    <div class="flex flex-col items-center py-24 space-y-4">
       <PresenceGroup>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.3)">
           <h1 class="title highlight">
@@ -33,7 +32,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
         @apply text-center inline-block relative text-6xl py-2 font-bold text-zinc-800;
 
         &.highlight{
-            @apply p-4 border border-zinc-900/70 rounded-lg before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg bg-primary -z-10 pointer-events-none);
+            @apply p-4 border border-zinc-900/70 rounded-lg before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg bg-[rgba(var(--primary),0.5)] -z-10 pointer-events-none);
         }
     }
 

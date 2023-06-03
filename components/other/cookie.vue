@@ -75,7 +75,7 @@ function agree() {
               By clicking "Allow all", you agree to use of all cookies. Visit our <a class="inline-flex items-center gap-x-1.5 font-medium text-blue-600 decoration-2 hover:underline" href="#">Cookies Policy</a> to learn more.
             </p>
             <div class="mt-5 inline-flex gap-x-2">
-              <button type="button" class="text-zinc-950 !bg-primary btn" @click="agree">
+              <button type="button" class="btn text-white/80 hover:text-white !bg-primary" @click="agree">
                 Okey
               </button>
             </div>
