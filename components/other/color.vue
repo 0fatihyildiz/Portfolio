@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useGeneralStore } from '~/store'
+
 const colors: { name: string; value: string }[] = [
   {
     name: 'Red',
@@ -72,12 +74,19 @@ const colors: { name: string; value: string }[] = [
 
 const colorMenuState = ref(false)
 
+const store = useGeneralStore()
+
 const primaryColor = useCssVar('--primary')
 
 function handleSetColor(color: string) {
   primaryColor.value = color
+  store.color = color
   colorMenuState.value = false
 }
+
+onMounted(() => {
+  primaryColor.value = store.color
+})
 </script>
 
 <template>
