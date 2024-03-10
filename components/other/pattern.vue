@@ -1,21 +1,14 @@
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
-
-const props = defineProps<{
-  name?: string
-  height?: number
-  width?: number
-}>()
+import { Avvvatars } from 'avvvatars-vue'
 
 const random = (Math.floor(Math.random() * 60) + 1)
-
-const icon = defineAsyncComponent(() =>
-  import(`../../assets/patterns/${props.name ? props.name : random}.svg`),
-)
 </script>
 
 <template>
   <ClientOnly>
-    <component :is="icon" viewBox="0 0 32 32" :heigh="height" :width="width" />
+    <Avvvatars
+      :value="String(random)"
+      :size="100"
+    />
   </ClientOnly>
 </template>
