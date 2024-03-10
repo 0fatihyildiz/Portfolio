@@ -34,6 +34,7 @@ onMounted(() => {
 
 <template>
   <teleport to="body">
+    <canvas class="pointer-events-none fixed select-none opacity-60" id="gradient-canvas" data-transition-in />
     <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-20 backdrop-blur-lg" />
   </teleport>
 </template>

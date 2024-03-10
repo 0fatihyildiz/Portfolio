@@ -77,7 +77,7 @@ function getHeight(el: HTMLParagraphElement) {
 
 <style lang="postcss" scoped>
 .aContainer {
-  @apply bg-white rounded-xl shadow-sm px-6 py-10 mt-10 sm:px-6 lg:px-8 lg:py-14 mx-auto;
+  @apply bg-white/50 backdrop-blur-lg rounded-xl shadow-sm px-6 py-10 mt-10 sm:px-6 lg:px-8 lg:py-14 mx-auto;
 
   .titleWrap {
     @apply mx-auto flex flex-col space-y-4 items-center text-center mb-10 lg:mb-14;

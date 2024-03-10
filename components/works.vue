@@ -90,7 +90,7 @@ const works: Work[] = [
     }
 
     .content {
-      @apply w-full md:w-2/3 bg-white rounded-xl shadow-sm flex flex-col gap-2 p-4;
+      @apply w-full md:w-2/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm flex flex-col gap-2 p-4;
       .title {
         @apply text-4xl font-bold;
       }
@@ -106,7 +106,7 @@ const works: Work[] = [
       }
     }
     .review {
-      @apply w-1/3 bg-white rounded-xl shadow-sm hidden md:flex flex-col gap-2 p-4;
+      @apply w-1/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm hidden md:flex flex-col gap-2 p-4;
 
       .content {
         @apply flex flex-col justify-center overflow-hidden shadow-inset shadow-sm flex-col gap-2 bg-zinc-100 w-full h-2/3 p-4;

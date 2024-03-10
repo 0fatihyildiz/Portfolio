@@ -50,7 +50,7 @@ watchEffect(() => {
             target="_blank"
           >
             <i :class="link.icon" class="inline-block text-sm text-zinc-500 transition group-hover:text-primary" />
-            {{ link.name }}
+            {{  link.name }}
           </FormLink>
         </nav>
       </div>
@@ -66,11 +66,11 @@ watchEffect(() => {
 
 <style lang="postcss" scoped>
 header {
-  @apply transition-all drop-shadow-sm bg-white duration-400 px-4 py-2 rounded-full flex space-x-4 items-center justify-between sticky -top-20 z-20;
+  @apply max-w-4xl mx-auto transition-all drop-shadow-sm backdrop-blur-lg duration-400 py-2 rounded-full flex space-x-4 items-center justify-between sticky -top-20 z-20;
   animation: initialAnimation 1s ease-in-out;
 
   &.active {
-    @apply top-5 drop-shadow-xl;
+    @apply top-5 drop-shadow-xl bg-white/80 px-4 ;
   }
 
   .logo {

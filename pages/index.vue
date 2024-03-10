@@ -3,5 +3,4 @@
   <Stats />
   <Works />
   <About />
-  <Cta />
 </template>
