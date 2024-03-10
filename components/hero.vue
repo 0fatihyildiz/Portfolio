@@ -8,7 +8,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
       <PresenceGroup>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.3)">
           <h1 class="title">
-            Hi, I'm <span class="text-[rgba(var(--primary),1)]">Fatih Yildiz</span>
+            Hi, I'm <span class="text-[rgba(var(--primary),1)]">Fatih Yıldız</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.4)">

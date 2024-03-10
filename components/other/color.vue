@@ -76,6 +76,8 @@ const colorMenuState = ref(false)
 
 const store = useGeneralStore()
 
+const colorMenu = ref<HTMLElement | undefined>()
+
 const primaryColor = useCssVar('--primary')
 
 function handleSetColor(color: string) {
@@ -87,11 +89,13 @@ function handleSetColor(color: string) {
 onMounted(() => {
   primaryColor.value = store.color
 })
+
+onClickOutside(colorMenu, () => colorMenuState.value = false)
 </script>
 
 <template>
-  <div
-    class="group fixed right-5 top-1/2 z-10 flex flex-col overflow-y-auto rounded-full bg-white p-1 drop-shadow-lg transition ease-in-out -translate-y-1/2 space-y-2"
+  <div ref="colorMenu"
+    class="group fixed right-5 top-1/2 z-20 flex flex-col overflow-y-auto rounded-full bg-white p-1 drop-shadow-lg transition ease-in-out -translate-y-1/2 space-y-2"
     :class="{ 'translate-x-0': colorMenuState, 'translate-x-full hover:translate-x-1/2': !colorMenuState }"
   >
     <template v-if="colorMenuState">
