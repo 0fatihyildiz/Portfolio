@@ -24,7 +24,7 @@ main {
   @apply bg-zinc-50 border border-12 border-[rgba(var(--primary),0.2)] py-6 px-4 ;
 
   .content {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-5xl mx-auto;
   }
 }
 </style>

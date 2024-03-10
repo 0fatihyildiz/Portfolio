@@ -30,7 +30,7 @@ watchEffect(() => {
       >
     </NuxtLink>
     <div class="hidden w-full items-center justify-between md:flex">
-      <div class="flex items-center rgba-[#fff] space-x-6 divide-x divide-zinc-200">
+      <div class="rgba-[#fff] flex items-center space-x-6 divide-x divide-zinc-200">
         <nav class="nav">
           <FormLink
             v-for="(link, index) in navigation"
@@ -49,7 +49,7 @@ watchEffect(() => {
             :href="link.href"
             target="_blank"
           >
-            <i :class="link.icon" class="group-hover:text-primary inline-block text-sm text-zinc-500 transition" />
+            <i :class="link.icon" class="inline-block text-sm text-zinc-500 transition group-hover:text-primary" />
             {{ link.name }}
           </FormLink>
         </nav>

@@ -21,7 +21,7 @@ const stats = [
 
 <style lang="postcss" scoped>
 .stats {
-  @apply bg-white max-w-3xl mx-auto shadow-sm py-8 flex flex-col justify-center rounded-full mt-12 px-6 mb-36;
+  @apply bg-white max-w-4xl mx-auto shadow-sm py-8 flex flex-col justify-center rounded-full mt-12 px-6 mb-36;
 
   .statsWrap {
     @apply flex justify-around px-12 w-full;

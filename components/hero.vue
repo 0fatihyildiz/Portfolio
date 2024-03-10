@@ -4,17 +4,17 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
 
 <template>
   <section class="relative">
-    <div class="flex flex-col items-center py-24 space-y-4">
+    <div class="flex flex-col py-24 space-y-4">
       <PresenceGroup>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.3)">
-          <h1 class="title highlight">
-            Hi, I'm <span class="text-zinc-900">Fatih Yildiz</span>
+          <h1 class="title">
+            Hi, I'm <span class="text-[rgba(var(--primary),1)]">Fatih Yildiz</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.4)">
-          <h1 class="title !text-5xl">
-            I'm a <span class="text-zinc-900">Frontend Developer</span> from
-            <span class="text-zinc-900">Turkey</span>
+          <h1 class="title !text-2xl sm:!text-5xl">
+            I'm a <span class="text-[rgba(var(--primary),1)]">Frontend Developer</span> from
+            <span class="text-black">Turkey</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.5)">
@@ -29,7 +29,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
 
 <style lang="postcss" scoped>
     .title{
-        @apply text-center inline-block relative text-6xl py-2 font-bold text-zinc-800;
+        @apply text-left inline-block relative text-6xl sm:text-8xl font-bold text-zinc-600 tracking-tighter;
 
         &.highlight{
             @apply p-4 border border-zinc-900/70 rounded-lg before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg bg-[rgba(var(--primary),0.5)] -z-10 pointer-events-none);
@@ -37,6 +37,6 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
     }
 
     .subtitle{
-        @apply text-xl text-center text-zinc-500;
+        @apply text-xl text-zinc-500;
     }
 </style>

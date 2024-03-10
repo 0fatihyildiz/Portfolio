@@ -23,5 +23,11 @@ export default defineNuxtConfig({
       'cssnano': true,
     },
   },
-  modules: ['@unocss/nuxt', '@productdevbook/motion/nuxt', '@vueuse/nuxt'],
+  modules: [
+    '@unocss/nuxt',
+    '@productdevbook/motion/nuxt',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+  ],
 })

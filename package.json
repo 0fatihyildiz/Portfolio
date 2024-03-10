@@ -22,6 +22,8 @@
     "@iconify-json/ph": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.53",
     "@iconify-json/svg-spinners": "^1.1.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "@pinia/nuxt": "^0.5.1",
     "@unocss/eslint-config": "^0.51.13",
     "@unocss/nuxt": "^0.50.8",
     "@unocss/preset-web-fonts": "^0.51.4",
@@ -29,11 +31,12 @@
     "@vue-macros/nuxt": "^1.2.8",
     "@vueuse/nuxt": "^10.1.2",
     "cssnano": "^6.0.1",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.10.3",
     "postcss": "^8.4.22",
     "postcss-hexrgba": "^2.1.0",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
-    "unocss": "^0.51.4"
+    "unocss": "^0.51.4",
+    "vue-tsc": "^1.8.25"
   }
 }
