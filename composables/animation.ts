@@ -1,5 +1,5 @@
-import { spring } from '@productdevbook/motion'
 import type { AnimationOptionsWithOverrides, MotionKeyframesDefinition } from '@productdevbook/motion'
+import { spring } from '@productdevbook/motion'
 
 const initialKeyframes: MotionKeyframesDefinition = {
   opacity: 0,
@@ -19,4 +19,4 @@ function transition(delay: number): AnimationOptionsWithOverrides {
   }
 }
 
-export { initialKeyframes, animateKeyframes, transition }
+export { animateKeyframes, initialKeyframes, transition }
