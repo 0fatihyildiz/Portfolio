@@ -7,6 +7,8 @@ onMounted(() => {
   const gradient = new Gradient()
   gradient.initGradient('#gradient-canvas')
 })
+
+const isMounted = useMounted()
 </script>
 
 <template>
@@ -14,7 +16,7 @@ onMounted(() => {
     <OtherColor />
     <OtherNoise />
     <OtherCookie />
-    <NuxtLayout>
+    <NuxtLayout v-if="isMounted">
       <div class="content">
         <ClientOnly>
           <LayoutHeader />
@@ -23,6 +25,9 @@ onMounted(() => {
         <LayoutFooter />
       </div>
     </NuxtLayout>
+    <div class="inset-0 absolute bg-white" v-else>
+
+    </div>
   </main>
 </template>
 

@@ -29,5 +29,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-directus',
   ],
+  directus: {
+    url: 'https://playground-directus.etvy4f.easypanel.host',
+  }
 })
