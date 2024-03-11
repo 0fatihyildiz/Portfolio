@@ -4,7 +4,7 @@ interface State {
 
 export const useGeneralStore = defineStore('general', {
   state: (): State => ({
-    color: '239, 68, 68',
+    color: '168, 85, 247',
   }),
   persist: true,
 })

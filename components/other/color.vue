@@ -79,10 +79,13 @@ const store = useGeneralStore()
 const colorMenu = ref<HTMLElement | undefined>()
 
 const primaryColor = useCssVar('--primary')
+const gradientColor = useCssVar('--gradient-color-4')
 
-function handleSetColor(color: string) {
+function handleSetColor(color: string, name: string) {
   primaryColor.value = color
   store.color = color
+  gradientColor.value = name.toLowerCase()
+  initMesh()
   colorMenuState.value = false
 }
 
@@ -103,7 +106,7 @@ onClickOutside(colorMenu, () => colorMenuState.value = false)
         v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"
         :class="{ 'ring ring-offset-1': color.value === primaryColor }"
         class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full"
-        @click="() => handleSetColor(color.value)"
+        @click="() => handleSetColor(color.value, color.name)"
       />
     </template>
     <button

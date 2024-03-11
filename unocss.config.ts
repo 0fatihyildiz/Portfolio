@@ -29,11 +29,14 @@ export default defineConfig({
     'i-simple-icons-linkedin',
     // stack
     'i-logos-typescript-icon',
+    'i-logos-react',
+    'i-logos-nextjs-icon',
     'i-logos-vue',
     'i-logos-nuxt-icon',
     'i-logos-postcss',
     'i-logos-supabase-icon',
     'i-logos-firebase',
+    'i-logos-tailwindcss-icon',
   ],
   shortcuts: {
     btn: 'transition duration-200 bg-black hover:(bg-black/80 -translate-y-0.5 shadow-lg) text-sm capitalize text-white font-bold py-3 px-8 rounded-full whitespace-nowrap',

@@ -28,7 +28,7 @@
     "@unocss/nuxt": "^0.50.8",
     "@unocss/preset-web-fonts": "^0.51.4",
     "@unocss/transformer-variant-group": "^0.51.4",
-    "@vue-macros/nuxt": "^1.2.8",
+    "@vue-macros/nuxt": "^1.9.21",
     "@vueuse/nuxt": "^10.1.2",
     "cssnano": "^6.0.1",
     "node-fetch-native": "^1.6.2",

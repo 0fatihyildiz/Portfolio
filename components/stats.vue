@@ -4,8 +4,11 @@ const stats = [
   { id: 2, icon: 'i-logos-vue', href: 'https://vuejs.org/' },
   { id: 3, icon: 'i-logos-nuxt-icon', href: 'https://nuxt.com/' },
   { id: 4, icon: 'i-logos-supabase-icon', href: 'https://supabase.com/' },
-  { id: 5, icon: 'i-logos-firebase', href: 'https://firebase.google.com/' },
-  { id: 6, icon: 'i-logos-postcss', href: 'https://postcss.org/' },
+  { id: 5, icon: 'i-logos-react', href: 'https://reactjs.org/' },
+  { id: 6, icon: 'i-logos-nextjs-icon', href: 'https://nextjs.org/' },
+  { id: 6, icon: 'i-logos-firebase', href: 'https://firebase.google.com/' },
+  { id: 7, icon: 'i-logos-postcss', href: 'https://postcss.org/' },
+  { id: 8, icon: 'i-logos-tailwindcss-icon', href: 'https://tailwindcss.com/' }
 ]
 </script>
 
@@ -15,7 +18,7 @@ const stats = [
       <div class="stats">
         <dl class="statsWrap">
           <FormLink v-for="stat in stats" :key="stat.id" :href="stat.href" target="_blank" class="rgba- flex justify-around py-2 grayscale transition-filter hover:grayscale-0">
-            <div class="h-8 w-8" :class="stat.icon" />
+            <div class="h-10 w-10" :class="stat.icon" />
           </FormLink>
         </dl>
       </div>

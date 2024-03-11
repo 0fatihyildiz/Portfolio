@@ -2,10 +2,8 @@
 import '@unocss/reset/tailwind.css'
 import { Gradient } from '@/utils/Gradient'
 
-
 onMounted(() => {
-  const gradient = new Gradient()
-  gradient.initGradient('#gradient-canvas')
+  initMesh()
 })
 
 const isMounted = useMounted()

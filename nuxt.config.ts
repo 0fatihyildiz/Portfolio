@@ -30,7 +30,11 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-directus',
+    '@vue-macros/nuxt'
   ],
+  macros: {
+    exportExpose: true,
+  },
   directus: {
     url: 'https://playground-directus.etvy4f.easypanel.host',
   }
