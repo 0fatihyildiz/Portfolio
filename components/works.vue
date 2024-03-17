@@ -1,48 +1,38 @@
 <script lang="ts" setup>
 import type { Work } from '@/composables/types'
 import { animate, glide } from '@productdevbook/motion';
+import type { Repository } from '~/types/github';
 
-const works: Work[] = [
-  {
-    id: 1,
-    name: 'Unocss',
-    description: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
-    image:
-      'https://cdn.dribbble.com/users/5582142/screenshots/20303050/media/7d30ed06a2ad2bf8d1f23a4733a04138.png?compress=1&resize=1000x750&vertical=top',
-    link: 'https://google.com',
-    review: {
-      explain: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
-      tags: ['Vue', 'CSS-in-JS', 'Utility-first'],
-    },
-  },
-  {
-    id: 2,
-    name: 'Unocss',
-    description: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
-    image:
-      'https://cdn.dribbble.com/users/5582142/screenshots/20303050/media/7d30ed06a2ad2bf8d1f23a4733a04138.png?compress=1&resize=1000x750&vertical=top',
-    link: 'https://google.com',
-    review: {
-      explain: 'Unocss is a utility-first CSS-in-JS library for Vue 3.',
-      tags: ['Vue', 'CSS-in-JS', 'Utility-first'],
-    },
-  },
-]
+const { data: github_repos } = await useFetch<Repository[]>(`https://api.github.com/users/${config.socials.find(item => item.name === 'Github')?.username}/repos`)
+
+const works: Work[] = (github_repos.value || []).filter(item => {
+  return item.topics.length && !item.fork && !!item.description
+}).map(item => ({
+  id: item.id,
+  image: `https://opengraph.githubassets.com/a/${item.full_name}`,
+  description: item.description,
+  link: item.url,
+  name: item.name,
+  review: {
+    explain: item.description,
+    tags: item.topics
+  }
+}
+))
 
 const tags = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   if (tags.value)
-    animate(tags.value, { x: 0 }, { easing: glide({ velocity: -200 }) })
+    animate(tags.value, { x: 0 }, { easing: glide({ velocity: 0 }) })
 })
 
 </script>
 
 <template>
   <section id="works" class="wContainer">
-    <!-- TODO: link -->
-    <div v-for="work in works" :key="work.id" class="work">
-      <div class="content">
+    <NuxtLink v-for="work in works" :key="work.id" class="work" :to="work.link">
+      <div class="content group">
         <div class="flex justify-between px-8 py-6">
           <div>
             <h1 class="title">
@@ -81,7 +71,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </div>
+    </NuxtLink>
   </section>
 </template>
 

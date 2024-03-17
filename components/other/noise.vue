@@ -2,6 +2,7 @@
 import { useGeneralStore } from '~/store';
 
 const canvas = ref<HTMLCanvasElement | undefined>()
+const isMounted = useMounted()
 
 function resize() {
   const w = window.innerWidth
@@ -36,7 +37,7 @@ onMounted(() => {
 
 <template>
   <teleport to="body">
-    <canvas class="pointer-events-none fixed select-none opacity-40" id="gradient-canvas" data-transition-in />
-    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-20 backdrop-blur-lg" />
+    <canvas v-if="isMounted" class="pointer-events-none fixed select-none opacity-20" id="gradient-canvas" data-transition-in />
+    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-10 backdrop-blur-lg" />
   </teleport>
 </template>

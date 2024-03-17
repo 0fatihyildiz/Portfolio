@@ -81,16 +81,24 @@ const colorMenu = ref<HTMLElement | undefined>()
 const primaryColor = useCssVar('--primary')
 const gradientColor = useCssVar('--gradient-color-4')
 
-function handleSetColor(color: string, name: string) {
+function meshColor(color: string) {
+  initMesh()
+
+  const [r, g, b] = color.split(',').map(item => Number(item))
+  gradientColor.value = rgbToHex(r, g, b)
+}
+
+function handleSetColor(color: string) {
+  meshColor(color)
   primaryColor.value = color
   store.color = color
-  gradientColor.value = name.toLowerCase()
-  initMesh()
   colorMenuState.value = false
 }
 
 onMounted(() => {
   primaryColor.value = store.color
+  
+  nextTick(() => meshColor(store.color))
 })
 
 onClickOutside(colorMenu, () => colorMenuState.value = false)
@@ -99,19 +107,15 @@ onClickOutside(colorMenu, () => colorMenuState.value = false)
 <template>
   <div ref="colorMenu"
     class="group fixed right-5 top-1/2 z-20 flex flex-col overflow-y-auto rounded-full bg-white p-1 drop-shadow-lg transition ease-in-out -translate-y-1/2 space-y-2"
-    :class="{ 'translate-x-0': colorMenuState, 'translate-x-full hover:translate-x-1/2': !colorMenuState }"
-  >
+    :class="{ 'translate-x-0': colorMenuState, 'translate-x-full hover:translate-x-1/2': !colorMenuState }">
     <template v-if="colorMenuState">
-      <button
-        v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"
+      <button v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"
         :class="{ 'ring ring-offset-1': color.value === primaryColor }"
         class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full"
-        @click="() => handleSetColor(color.value, color.name)"
-      />
+        @click="() => handleSetColor(color.value)" />
     </template>
-    <button
-      v-else
-      class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full bg-[rgba(var(--primary),1)]" @click="colorMenuState = !colorMenuState"
-    />
+    <button v-else
+      class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full bg-[rgba(var(--primary),1)]"
+      @click="colorMenuState = !colorMenuState" />
   </div>
 </template>

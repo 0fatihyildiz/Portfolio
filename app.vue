@@ -2,8 +2,8 @@
 import '@unocss/reset/tailwind.css'
 import { Gradient } from '@/utils/Gradient'
 
-onMounted(() => {
-  initMesh()
+onMounted(async () => {
+  await initMesh()
 })
 
 const isMounted = useMounted()
@@ -20,7 +20,7 @@ const isMounted = useMounted()
           <LayoutHeader />
         </ClientOnly>
         <NuxtPage />
-        <LayoutFooter />
+        <!-- <LayoutFooter /> -->
       </div>
     </NuxtLayout>
     <div class="inset-0 absolute bg-white" v-else>

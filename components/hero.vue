@@ -8,18 +8,18 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
       <PresenceGroup>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.3)">
           <h1 class="title">
-            Hi, I'm <span class="text-[rgba(var(--primary),1)]">Fatih Yıldız</span>
+            Hi, I'm <span class="text-[rgba(var(--primary),1)]">{{ config.name }}</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.4)">
           <h1 class="title !text-2xl sm:!text-5xl">
-            I'm a <span class="text-[rgba(var(--primary),1)]">Frontend Developer</span> from
+            I'm a <span class="text-[rgba(var(--primary),1)]">{{ config.job_title }}</span> from
             <span class="text-black">Turkey</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.5)">
           <p class="subtitle">
-            I'm passionate about frontend development and design, always seeking new challenges and opportunities to learn.
+            {{ config.description }}
           </p>
         </Motion>
       </PresenceGroup>
