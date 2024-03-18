@@ -17,6 +17,9 @@ dependencies:
   vite-svg-loader:
     specifier: ^5.1.0
     version: 5.1.0(vue@3.4.21)
+  vue3-marquee:
+    specifier: ^4.2.0
+    version: 4.2.0(vue@3.4.21)
 
 devDependencies:
   '@antfu/eslint-config':
@@ -10895,6 +10898,15 @@ packages:
       semver: 7.6.0
       typescript: 5.1.3
     dev: true
+
+  /vue3-marquee@4.2.0(vue@3.4.21):
+    resolution: {integrity: sha512-Ij4iyvHZjTHMrsPqblpJjq6TYbEFq3utihUllAOfuy0E6W2QKX1vX4E7e7qV/ShmHbCbG0pljcEDq3y0FtzBGw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.2
+    dependencies:
+      vue: 3.4.21(typescript@5.1.3)
+    dev: false
 
   /vue@3.4.21(typescript@5.1.3):
     resolution: {integrity: sha512-5hjyV/jLEIKD/jYl4cavMcnzKwjMKohureP8ejn3hhEjwhWIhWeuzL2kJAjzl/WyVsgPY56Sy4Z40C3lVshxXA==}

@@ -39,5 +39,18 @@ interface Repository {
     topics: string[]
 }
 
+interface PinnedRepostories {
+    name: string;
+    repo: string;
+    description: string;
+    demo: string;
+    language: {
+        name: string;
+        color: string;
+    };
+    stars: number;
+    forks: number;
+}
 
-export type { Repository, Owner, License }
+
+export type { Repository, Owner, License, PinnedRepostories }

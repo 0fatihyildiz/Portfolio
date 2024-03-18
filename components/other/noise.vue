@@ -25,19 +25,30 @@ function noise(canvas: HTMLCanvasElement | undefined) {
   ctx?.putImageData(idata as ImageData, 0, 0)
 }
 
+let animationId: number | null = null;
+
+function animateNoise() {
+  noise(canvas.value);
+  animationId = requestAnimationFrame(animateNoise);
+}
+
 onMounted(() => {
   window.addEventListener('resize', () => {
-    resize()
-    noise(canvas.value)
-  })
-  resize()
-  noise(canvas.value)
+    resize();
+  });
+  resize();
+  animateNoise();
 })
+
+onUnmounted(() => {
+  if(animationId)
+    cancelAnimationFrame(animationId);
+});
 </script>
 
 <template>
   <teleport to="body">
     <canvas v-if="isMounted" class="pointer-events-none fixed select-none opacity-20" id="gradient-canvas" data-transition-in />
-    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-10 backdrop-blur-lg" />
+    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-20 backdrop-blur-lg" />
   </teleport>
 </template>

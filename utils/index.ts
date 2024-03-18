@@ -11,3 +11,7 @@ export const componentToHex = (c: number): string => {
     const hex = c.toString(16);
     return hex.length === 1 ? "0" + hex : hex;
 }
+
+export const kebapCaseToSentance = (val: string) => {
+    return val.split('-').map(item => item.charAt(0).toUpperCase() + item.slice(1)).join(' ')
+}

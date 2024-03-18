@@ -1,24 +1,30 @@
 <script lang="ts" setup>
 import type { Work } from '@/composables/types'
 import { animate, glide } from '@productdevbook/motion';
-import type { Repository } from '~/types/github';
+import type { PinnedRepostories } from '~/types/github';
 
-const { data: github_repos } = await useFetch<Repository[]>(`https://api.github.com/users/${config.socials.find(item => item.name === 'Github')?.username}/repos`)
+const githubUsername = config.socials.find(item => item.name === 'Github')?.username
+const repoAndOwner = (url: string) => {
+  const repoAndOwnerName = url.split('/')
 
-const works: Work[] = (github_repos.value || []).filter(item => {
-  return item.topics.length && !item.fork && !!item.description
-}).map(item => ({
-  id: item.id,
-  image: `https://opengraph.githubassets.com/a/${item.full_name}`,
+  return `${repoAndOwnerName.at(-2)}/${repoAndOwnerName.at(-1)}`
+}
+const { data: github_repos } = await useFetch<{ response: PinnedRepostories[] }>(`https://gh-pinned-repos-api.ysnirix.xyz/api/get/?username=${githubUsername}`)
+
+
+const works: Work[] = (github_repos.value?.response || [])?.map((item, id) => ({
+  id,
+  image: `https://opengraph.githubassets.com/a/${repoAndOwner(item.repo)}`,
   description: item.description,
-  link: item.url,
+  link: item.repo,
   name: item.name,
   review: {
     explain: item.description,
-    tags: item.topics
+    tags: ['test', 'test1', 'test2', 'test3']
   }
 }
 ))
+
 
 const tags = ref<HTMLElement | null>(null)
 
@@ -36,7 +42,7 @@ onMounted(() => {
         <div class="flex justify-between px-8 py-6">
           <div>
             <h1 class="title">
-              {{ work.name }}
+              {{ work.name.split('-').join(' ') }}
             </h1>
             <p class="description">
               {{ work.description }}
@@ -52,7 +58,6 @@ onMounted(() => {
         </div>
       </div>
       <div class="review">
-        <!-- TODO -->
         <div class="h-1/3 w-full flex items-center justify-center p-12">
           <div class="pattern">
             <OtherPattern class="h-12 w-12 text-zinc-950" />
@@ -63,10 +68,12 @@ onMounted(() => {
             <h1 class="explain">
               {{ work.review.explain }}
             </h1>
-            <div ref="tags" class="tags">
-              <div v-for="tag in work.review.tags" :key="tag" class="tag">
-                {{ tag }}
-              </div>
+            <div ref="tags">
+              <Marquee>
+                <div v-for="tag in work.review.tags" :key="tag" class="tag">
+                  {{ kebapCaseToSentance(tag) }}
+                </div>
+              </Marquee>
             </div>
           </div>
         </div>
@@ -90,7 +97,7 @@ onMounted(() => {
       @apply w-full md:w-2/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm flex flex-col gap-2 p-4;
 
       .title {
-        @apply text-4xl font-bold;
+        @apply text-4xl font-semibold capitalize;
       }
 
       .description {
@@ -110,17 +117,21 @@ onMounted(() => {
       @apply w-1/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm hidden md:flex flex-col gap-2 p-4;
 
       .content {
-        @apply flex flex-col justify-center overflow-hidden shadow-inset shadow-sm flex-col gap-2 bg-zinc-100 w-full h-2/3 p-4 after:(content-[''] absolute bottom-0 -left-10 w-12 h-full bg-gradient-to-r from-zinc-200 to-transparent) before:(content-[''] absolute bottom-0 -right-10 w-12 h-full bg-gradient-to-r from-transparent to-zinc-200);
+        @apply flex flex-col justify-center overflow-hidden shadow-inset shadow-sm flex-col gap-2 bg-zinc-100 w-full h-2/3 py-4 px-0 after:(content-[''] absolute bottom-0 -left-0 w-12 h-full bg-gradient-to-r from-zinc-100 to-transparent) before:(content-[''] absolute bottom-0 right-0 z-10 w-12 h-full bg-gradient-to-r from-transparent to-zinc-100);
 
         .explain {
-          @apply text-2xl font-bold text-center;
+          @apply text-lg font-bold text-center px-4 pb-4 z-10;
         }
 
-        .tags {
-          @apply relative flex justify-start gap-2 mt-4;
+        .marquee {
+          @apply m-0
+        }
+
+        .vue3-marquee {
+          @apply relative flex justify-start space-x-4;
 
           .tag {
-            @apply text-zinc-900 bg-white shadow-sm rounded-full py-1 px-8 font-medium whitespace-nowrap;
+            @apply text-zinc-900 bg-white shadow-sm rounded-full py-1 px-8 font-medium whitespace-nowrap mr-4;
           }
         }
       }
