@@ -39,7 +39,7 @@ export default defineConfig({
     'i-logos-tailwindcss-icon',
   ],
   shortcuts: {
-    btn: 'transition duration-200 bg-black hover:(bg-black/80 -translate-y-0.5 shadow-lg) text-sm capitalize text-white font-bold py-3 px-8 rounded-full whitespace-nowrap',
+    btn: 'transition duration-200 bg-black hover:(bg-[rgba(var(--primary),1)] -translate-y-0.5 shadow-lg) text-sm capitalize text-white font-bold py-3 px-8 rounded-full whitespace-nowrap',
   },
   presets: [
     presetUno(),
@@ -47,10 +47,10 @@ export default defineConfig({
     presetTypography(),
     presetIcons(),
     presetWebFonts({
-      provider: 'bunny',
+      provider: 'fontshare',
       fonts: {
         sans: {
-          name: 'Albert Sans',
+          name: 'Author',
           weights: [300, 400, 500, 600, 700],
         },
       },

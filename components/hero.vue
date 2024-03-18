@@ -29,7 +29,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
 
 <style lang="postcss" scoped>
     .title{
-        @apply text-left inline-block relative text-6xl sm:text-8xl font-bold text-zinc-600 tracking-tighter;
+        @apply text-left inline-block relative text-6xl sm:text-8xl font-bold text-zinc-600 tracking-tight;
 
         &.highlight{
             @apply p-4 border border-zinc-900/70 rounded-lg before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg bg-[rgba(var(--primary),0.5)] -z-10 pointer-events-none);

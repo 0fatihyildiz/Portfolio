@@ -1,21 +1,19 @@
 <script lang="ts" setup>
 const about = reactive([
   {
-    title: 'Lorem ipsum dolor sit.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam.',
+    title: "What Influenced Your Path in Frontend and UI/UX, and How Do You Stay Proficient?",
+    description: "My interest in frontend development and UI/UX design stemmed from a desire to create engaging digital experiences. I recognized the importance of harmonizing aesthetics with functionality early on, which led me to explore both disciplines simultaneously. To maintain proficiency, I prioritize continuous learning and practice, leveraging resources like online courses and tutorials to stay updated with industry standards and best practices.",
     active: false,
   },
   {
-    title: 'Lorem ipsum dolor sit.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam impedit consectetur numquam.',
+    title: "Impact of Open-Source Involvement on Your Skills?",
+    description: "Contributing to open-source projects has been instrumental in broadening my skill set and reinforcing core principles. By collaborating with peers on real-world projects, I've gained practical experience in coding and design, honed my problem-solving abilities, and learned to adapt to different project requirements. Moreover, exposure to diverse perspectives within the open-source community has deepened my understanding of industry trends and user preferences.",
     active: false,
   },
 ])
 
 function toggleAcordion(index: number) {
-  about.forEach((item, i) => {
+  about.map((item, i) => {
     if (i === index)
       item.active = !item.active
     else item.active = false
@@ -55,7 +53,7 @@ function getHeight(el: HTMLParagraphElement) {
           <h1 class="title">
             {{ question.title }}
           </h1>
-          <div class="i-ph-triangle-fill h-2 w-2 transition duration-300" :class="question.active ? 'rotate-0' : 'rotate-180' " />
+          <div class="i-ph-x-bold h-4 w-4 transition duration-300" :class="question.active ? 'rotate-0 opacity-100' : 'rotate-45 opacity-70' " />
         </div>
         <div class="transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
           <p
@@ -86,7 +84,7 @@ function getHeight(el: HTMLParagraphElement) {
       @apply text-2xl font-bold md:text-4xl md:leading-tight dark:text-white;
     }
     .description {
-      @apply mt-1 text-gray-600 dark:text-gray-400;
+      @apply mt-1 text-gray-600;
     }
   }
 
@@ -109,7 +107,7 @@ function getHeight(el: HTMLParagraphElement) {
       }
 
       .description {
-        @apply transition-all text-left ease-in-out text-zinc-900 dark:text-gray-400 opacity-0;
+        @apply transition-all text-left ease-in-out text-zinc-900 opacity-0 pointer-events-none;
       }
     }
   }
