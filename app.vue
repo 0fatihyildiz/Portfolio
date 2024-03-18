@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import '@unocss/reset/tailwind.css'
 import { Gradient } from '@/utils/Gradient'
+import { useModalStore } from './store';
 
 onMounted(async () => {
   await initMesh()
 })
 
 const isMounted = useMounted()
+
 </script>
 
 <template>
@@ -14,6 +16,7 @@ const isMounted = useMounted()
     <OtherColor />
     <OtherNoise />
     <OtherCookie />
+    <ModalContact />
     <NuxtLayout v-if="isMounted">
       <div class="content">
         <ClientOnly>
@@ -23,8 +26,8 @@ const isMounted = useMounted()
         <!-- <LayoutFooter /> -->
       </div>
     </NuxtLayout>
-    <div class="inset-0 absolute bg-white" v-else>
-
+    <div class="inset-0 absolute bg-white z-30" v-else>
+      
     </div>
   </main>
 </template>

@@ -55,6 +55,9 @@ devDependencies:
   '@unocss/transformer-variant-group':
     specifier: ^0.51.4
     version: 0.51.4
+  '@vee-validate/nuxt':
+    specifier: ^4.12.6
+    version: 4.12.6(vue@3.4.21)
   '@vue-macros/nuxt':
     specifier: ^1.9.21
     version: 1.9.21(@vue-macros/reactivity-transform@0.4.3)(nuxt@3.10.3)(typescript@5.1.3)(vite@4.3.9)(vue-tsc@2.0.6)(vue@3.4.21)(webpack@5.85.0)
@@ -3212,6 +3215,18 @@ packages:
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  /@vee-validate/nuxt@4.12.6(vue@3.4.21):
+    resolution: {integrity: sha512-QYz8RDgboLoGRr8J3daB2BQ1eMdBY5XRqtTvieeNhRfSBWweUpjuWRZJx6XqNyT1/K3dEgbrRvR07uTFAK4D0g==}
+    dependencies:
+      '@nuxt/kit': 3.10.3
+      local-pkg: 0.5.0
+      vee-validate: 4.12.6(vue@3.4.21)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - vue
     dev: true
 
   /@vercel/nft@0.26.4:
@@ -10082,6 +10097,11 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
+  /type-fest@4.12.0:
+    resolution: {integrity: sha512-5Y2/pp2wtJk8o08G0CMkuFPCO354FGwk/vbidxrdhRGZfd0tFnb4Qb8anp9XxXriwBgVPjdWbKpGl4J9lJY2jQ==}
+    engines: {node: '>=16'}
+    dev: true
+
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
     dependencies:
@@ -10592,6 +10612,16 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       builtins: 5.0.1
+    dev: true
+
+  /vee-validate@4.12.6(vue@3.4.21):
+    resolution: {integrity: sha512-EKM3YHy8t1miPh30d5X6xOrfG/Ctq0nbN4eMpCK7ezvI6T98/S66vswP+ihL4QqAK/k5KqreWOxof09+JG7N/A==}
+    peerDependencies:
+      vue: ^3.3.11
+    dependencies:
+      '@vue/devtools-api': 6.6.1
+      type-fest: 4.12.0
+      vue: 3.4.21(typescript@5.1.3)
     dev: true
 
   /vite-node@1.3.1:

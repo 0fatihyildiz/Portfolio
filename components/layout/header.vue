@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useModalStore } from '~/store';
+
 const { y, directions } = useScroll(window)
 const direction = ref(false)
+const modals = useModalStore()
 
 const navigation = [
   { name: 'Works', href: '#works' },
@@ -54,7 +57,7 @@ watchEffect(() => {
           </FormLink>
         </nav>
       </div>
-      <button class="btn">
+      <button class="btn" @click="() => modals.contact = true">
         Contact Me
       </button>
     </div>

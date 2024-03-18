@@ -105,17 +105,19 @@ onClickOutside(colorMenu, () => colorMenuState.value = false)
 </script>
 
 <template>
-  <div ref="colorMenu"
-    class="group fixed right-5 top-1/2 z-20 flex flex-col overflow-y-auto rounded-full bg-white p-1 drop-shadow-lg transition ease-in-out -translate-y-1/2 space-y-2"
-    :class="{ 'translate-x-0': colorMenuState, 'translate-x-full hover:translate-x-1/2': !colorMenuState }">
-    <template v-if="colorMenuState">
-      <button v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"
-        :class="{ 'ring ring-offset-1': color.value === primaryColor }"
-        class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full"
-        @click="() => handleSetColor(color.value)" />
-    </template>
-    <button v-else
-      class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full bg-[rgba(var(--primary),1)]"
-      @click="colorMenuState = !colorMenuState" />
+  <div class="inset-0 fixed flex items-center pl-5">
+    <div ref="colorMenu"
+      class="group z-2 w-10 flex flex-col overflow-hidden rounded-full bg-white p-1 drop-shadow-lg transition-all duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] space-y-2"
+      :class="{ 'h-170': colorMenuState, 'h-10': !colorMenuState }">
+      <template v-if="colorMenuState">
+        <button v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"
+          :class="{ 'ring ring-offset-1': color.value === primaryColor }"
+          class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full"
+          @click="() => handleSetColor(color.value)" />
+      </template>
+      <button v-else
+        class="h-8 w-8 flex-shrink-0 border border-black border-opacity-10 rounded-full bg-[rgba(var(--primary),1)]"
+        @click="colorMenuState = !colorMenuState" />
+    </div>
   </div>
 </template>

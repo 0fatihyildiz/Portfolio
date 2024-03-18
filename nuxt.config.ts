@@ -30,7 +30,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-directus',
-    '@vue-macros/nuxt'
+    '@vue-macros/nuxt',
+    '@vee-validate/nuxt'
   ],
   macros: {
     exportExpose: true,
