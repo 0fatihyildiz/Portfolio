@@ -26,7 +26,6 @@ export default defineNuxtConfig({
     plugins: {
       'postcss-nested': {},
       'postcss-import': true,
-      'postcss-hexrgba': true,
       'cssnano': true,
     },
   },
@@ -36,14 +35,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    'nuxt-directus',
     '@vue-macros/nuxt',
     '@vee-validate/nuxt'
   ],
   macros: {
     exportExpose: true,
   },
-  directus: {
-    url: 'https://playground-directus.etvy4f.easypanel.host',
-  }
 })

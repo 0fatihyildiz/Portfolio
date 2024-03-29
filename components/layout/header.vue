@@ -69,11 +69,11 @@ watchEffect(() => {
 
 <style lang="postcss" scoped>
 header {
-  @apply max-w-4xl mx-auto transition-all drop-shadow-sm duration-400 py-2 rounded-full flex space-x-4 items-center justify-between sticky -top-20 z-20;
+  @apply max-w-4xl mx-auto transition-all duration-400 py-2 rounded-full flex space-x-4 items-center justify-between sticky -top-20 z-20 shadow-sm bg-white/80 px-4 backdrop-blur-lg;
   animation: initialAnimation 1s ease-in-out;
 
   &.active {
-    @apply top-5 drop-shadow-xl bg-white/80 px-4 backdrop-blur-lg;
+    @apply top-5;
   }
 
   .logo {

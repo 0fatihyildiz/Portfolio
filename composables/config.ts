@@ -8,12 +8,10 @@ const config = {
   socials: [
     {
       name: 'Github',
-      url: 'https://github.com/0fatihyildiz',
       username: '0fatihyildiz'
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/0fatihyildiz',
       username: '0fatihyildiz'
     },
   ],

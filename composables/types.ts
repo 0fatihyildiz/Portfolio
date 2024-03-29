@@ -10,4 +10,4 @@ interface Work {
   }
 }
 
-export { Work }
+export type { Work }
