@@ -1,5 +1,5 @@
 export interface Repos {
-    title: string,
+    name: string,
     description: string,
     link: string,
     image: string,
@@ -9,6 +9,5 @@ export interface Repos {
 }
 
 export interface PinnedRepos extends Repos {
-[x: string]: any
-    topisc: string[]
+    topics: string[]
 }

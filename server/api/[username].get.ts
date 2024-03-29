@@ -1,6 +1,6 @@
 import { parse } from 'muninn';
 import { ofetch } from "ofetch";
-import { Repos } from '../types';
+import { PinnedRepos, Repos } from '../types';
 
 const baseURL = 'https://github.com/'
 
@@ -32,7 +32,7 @@ const topics_config = {
     }
 }
 
-async function getTopics(url: string) {
+async function getTopics(url: string): Promise<string[]> {
     const repo = await ofetch(url, {
         baseURL
     })
@@ -60,7 +60,7 @@ export default defineEventHandler(async (event) => {
     // @ts-ignore
     const data: Repos[] = parse(profile, pinned_repository_config)
 
-    const enhancedData = await Promise.all(data.map(async (item) => {
+    const enhancedData: PinnedRepos[] = await Promise.all(data.map(async (item) => {
         const stars = item.stars ? Number(item.stars) : 0
         const forks = item.forks ? Number(item.forks) : 0
         const topics = await getTopics(item.link)
