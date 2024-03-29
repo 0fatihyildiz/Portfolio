@@ -12,19 +12,32 @@ function resize() {
 }
 
 function noise(canvas: HTMLCanvasElement | undefined) {
-  const noiseFrame = canvas
-  const ctx = noiseFrame?.getContext('2d')
-  const w = ctx?.canvas.width || 0
-  const h = ctx?.canvas.height || 0
-  const idata = ctx?.createImageData(w, h)
-  const buffer32 = new Uint32Array(idata?.data.buffer as ArrayBuffer)
-  const len = buffer32.length
+  if (!canvas) return;
 
-  for (let i = 0; i < len; i++)
-    buffer32[i++] = 0xFF000000 | (Math.random() * 0x00FFFFFF)
-  ctx?.putImageData(idata as ImageData, 0, 0)
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const w = canvas.width;
+  const h = canvas.height;
+
+
+  const imageData = ctx.createImageData(w, h);
+  const data = imageData.data;
+
+
+  const randomColor = () => 0xFF000000 | (Math.random() * 0x00FFFFFF);
+
+
+  for (let i = 0; i < data.length; i += 4) {
+    const color = randomColor();
+    data[i] = (color >> 24) & 0xFF;
+    data[i + 1] = (color >> 16) & 0xFF;
+    data[i + 2] = (color >> 8) & 0xFF;
+    data[i + 3] = color & 0xFF;
+  }
+
+  ctx.putImageData(imageData, 0, 0);
 }
-
 let animationId: number | null = null;
 
 function animateNoise() {

@@ -1,11 +1,7 @@
 <script lang="ts" setup>
 import '@unocss/reset/tailwind.css'
-import { Gradient } from '@/utils/Gradient'
-import { useModalStore } from './store';
 
-onMounted(async () => {
-  await initMesh()
-})
+onMounted(initMesh)
 
 const isMounted = useMounted()
 
