@@ -1,43 +1,14 @@
 <script lang="ts" setup>
-import type { Work } from '@/composables/types'
-import { animate, glide } from '@productdevbook/motion';
-import type { PinnedRepostories } from '~/types/github';
+import type { PinnedRepos } from '~/server/types';
 
 const githubUsername = config.socials.find(item => item.name === 'Github')?.username
-const repoAndOwner = (url: string) => {
-  const repoAndOwnerName = url.split('/')
 
-  return `${repoAndOwnerName.at(-2)}/${repoAndOwnerName.at(-1)}`
-}
-const { data: github_repos } = await useFetch<{ response: PinnedRepostories[] }>(`https://gh-pinned-repos-api.ysnirix.xyz/api/get/?username=${githubUsername}`)
-
-
-const works: Work[] = (github_repos.value?.response || [])?.map((item, id) => ({
-  id,
-  image: `https://opengraph.githubassets.com/a/${repoAndOwner(item.repo)}`,
-  description: item.description,
-  link: item.repo,
-  name: item.name,
-  review: {
-    explain: item.description,
-    tags: ['test', 'test1', 'test2', 'test3']
-  }
-}
-))
-
-
-const tags = ref<HTMLElement | null>(null)
-
-onMounted(() => {
-  if (tags.value)
-    animate(tags.value, { x: 0 }, { easing: glide({ velocity: 0 }) })
-})
-
+const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsername}`)
 </script>
 
 <template>
   <section id="works" class="wContainer">
-    <div v-for="work in works" :key="work.id" class="work">
+    <div v-for="(work, idx) in github_repos" :key="idx" class="work">
       <NuxtLink class="content group" :to="work.link">
         <div class="flex justify-between px-8 py-6">
           <div class="flex flex-col justify-center">
@@ -66,11 +37,11 @@ onMounted(() => {
         <div class="content">
           <div class="flex flex-col gap-2">
             <h1 class="explain">
-              {{ work.review.explain }}
+              {{ work.description }}
             </h1>
-            <div ref="tags">
+            <div>
               <Marquee>
-                <div v-for="tag in work.review.tags" :key="tag" class="tag">
+                <div v-for="tag in work.topics" :key="tag" class="tag">
                   {{ kebapCaseToSentance(tag) }}
                 </div>
               </Marquee>
@@ -94,7 +65,7 @@ onMounted(() => {
     }
 
     .content {
-      @apply w-full md:w-2/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm flex flex-col gap-2 p-4 transition duration-300 ease-in-out hover:(bg-neutral-50 scale-105);
+      @apply w-full md:w-2/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm flex flex-col gap-2 p-4 transition duration-300 ease-in-out hover:(bg-neutral-50);
 
       .title {
         @apply text-4xl font-semibold capitalize;

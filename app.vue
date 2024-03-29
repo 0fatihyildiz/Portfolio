@@ -4,7 +4,6 @@ import '@unocss/reset/tailwind.css'
 onMounted(initMesh)
 
 const isMounted = useMounted()
-
 </script>
 
 <template>
