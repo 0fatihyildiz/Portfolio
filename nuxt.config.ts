@@ -14,6 +14,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+  routeRules: {
+    '/[username]': {
+      cache: {
+        maxAge: 60 * 60 * 24 * 365 // 1 year
+      }
+    }
+  },
   css: ['~/assets/main.postcss'],
   postcss: {
     plugins: {
