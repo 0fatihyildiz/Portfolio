@@ -25,7 +25,7 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
           </a>
         </div>
         <div class="photoContainer">
-          <img class="photo" :src="work.image" :alt="work.name">
+          <NuxtImg sizes="100vw sm:50vw md:400px" class="photo" :src="work.image" :alt="work.name" />
         </div>
       </NuxtLink>
       <div class="review">

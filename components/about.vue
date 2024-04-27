@@ -17,7 +17,7 @@ const about = reactive([
 ])
 
 function toggleAcordion(index: number) {
-  about.map((item, i) => {
+  about.map((item: { active: boolean; }, i: number) => {
     if (i === index)
       item.active = !item.active
     else item.active = false

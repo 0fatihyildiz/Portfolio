@@ -15,18 +15,30 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/[username]': {
+    '/': {
+      prerender: true
+    },
+    '/api/[username]': {
       cache: {
         maxAge: 60 * 60 * 24 * 365 // 1 year
       }
-    }
+    },
+    "/api/**": { cors: true },
+  },
+  nitro: {
+    imports: {
+      dirs: ["./src/db/**"],
+      imports: [
+        { from: "zod", name: "z" },
+      ],
+    },
   },
   css: ['~/assets/main.postcss'],
   postcss: {
     plugins: {
       'postcss-nested': {},
       'postcss-import': true,
-      'cssnano': true,
+      cssnano: true,
     },
   },
   modules: [
@@ -36,7 +48,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@vue-macros/nuxt',
-    '@vee-validate/nuxt'
+    '@vee-validate/nuxt',
+    '@nuxt/image',
   ],
   macros: {
     exportExpose: true,

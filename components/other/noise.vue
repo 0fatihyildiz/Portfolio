@@ -62,6 +62,6 @@ onUnmounted(() => {
 <template>
   <teleport to="body">
     <canvas v-if="isMounted" class="pointer-events-none fixed select-none opacity-20" id="gradient-canvas" data-transition-in />
-    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-20 backdrop-blur-lg" />
+    <canvas ref="canvas" class="pointer-events-none fixed z-30 select-none opacity-10 backdrop-blur-lg" />
   </teleport>
 </template>
