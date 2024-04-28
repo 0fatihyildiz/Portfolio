@@ -3,8 +3,9 @@ import config from "../../../composables/config";
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 
 const client = useDevtoolsClient()
+const configFreezed = JSON.parse(JSON.stringify(config))
 
-const reactiveConfig = reactive(config)
+const reactiveConfig = ref(config)
 </script>
 
 <template>
@@ -24,26 +25,26 @@ const reactiveConfig = reactive(config)
           <NTextInput
             v-model="reactiveConfig.name"
             placeholder="Name and Surname"
-            class="w-full border border-white/10 rounded-lg"
+            class="w-full border border-black/10 dark:border-white/10 rounded-lg"
           />
           <NTextInput
             v-model="reactiveConfig.email"
-            placeholder="Name and Surname"
-            class="w-full border border-white/10 rounded-lg"
+            placeholder="Email"
+            class="w-full border border-black/10 dark:border-white/10 rounded-lg"
           />
         </div>
         <NTextInput
           v-model="reactiveConfig.job_title"
-          placeholder="Name and Surname"
-          class="w-full border border-white/10 rounded-lg"
+          placeholder="Job Title"
+          class="w-full border border-black/10 dark:border-white/10 rounded-lg"
         />
         <NTextInput
           v-model="reactiveConfig.from"
-          placeholder="Name and Surname"
-          class="w-full border border-white/10 rounded-lg"
+          placeholder="From"
+          class="w-full border border-black/10 dark:border-white/10 rounded-lg"
         />
         <NButton
-          :disabled="reactiveConfig !== config"
+          :disabled="deepComprassion(reactiveConfig, configFreezed)"
           class="bg-green/20 text-green hover:bg-green/30 rounded-md py-1 px-4 disabled:(opacity-50 hover:bg-green/20)"
         >
           Save
