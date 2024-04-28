@@ -1,48 +1,54 @@
 <script setup lang="ts">
+import config from "../../../composables/config";
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 
 const client = useDevtoolsClient()
+
+const reactiveConfig = reactive(config)
 </script>
 
 <template>
-  <div class="relative p-10 n-bg-base flex flex-col h-screen">
+  <div class="relative p-10 n-bg-base max-w-xl w-full mx-auto flex flex-col h-screen">
     <h1 class="text-3xl font-bold">
       Portfolio Module
     </h1>
     <div class="opacity-50 mb-4">
-      Nuxt DevTools Integration
+      This is a module for the portfolio editor
     </div>
     <div
       v-if="client"
       class="flex flex-col gap-2"
     >
-      <NTip
-        n="green"
-        icon="carbon-checkmark"
-      >
-        Nuxt DevTools is connected
-      </NTip>
-      <div>
-        The current app is using
-        <code class="text-green">vue@{{ client.host.nuxt.vueApp.version }}</code>
-      </div>
-      <div>
+      <div class="flex flex-col gap-2">
+        <div class="flex gap-2 w-full">
+          <NTextInput
+            v-model="reactiveConfig.name"
+            placeholder="Name and Surname"
+            class="w-full border border-white/10 rounded-lg"
+          />
+          <NTextInput
+            v-model="reactiveConfig.email"
+            placeholder="Name and Surname"
+            class="w-full border border-white/10 rounded-lg"
+          />
+        </div>
+        <NTextInput
+          v-model="reactiveConfig.job_title"
+          placeholder="Name and Surname"
+          class="w-full border border-white/10 rounded-lg"
+        />
+        <NTextInput
+          v-model="reactiveConfig.from"
+          placeholder="Name and Surname"
+          class="w-full border border-white/10 rounded-lg"
+        />
         <NButton
-          n="green"
-          class="mt-4"
-          @click="client!.host.devtools.close()"
+          :disabled="reactiveConfig !== config"
+          class="bg-green/20 text-green hover:bg-green/30 rounded-md py-1 px-4 disabled:(opacity-50 hover:bg-green/20)"
         >
-          Close DevTools
+          Save
         </NButton>
       </div>
     </div>
-    <div v-else>
-      <NTip n="yellow">
-        Failed to connect to the client. Did you open this page inside Nuxt DevTools?
-      </NTip>
-    </div>
-
-    <div class="flex-auto" />
-    <ModuleAuthorNote class="mt-5 " />
   </div>
 </template>
