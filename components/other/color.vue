@@ -105,9 +105,9 @@ onClickOutside(colorMenu, () => colorMenuState.value = false)
 </script>
 
 <template>
-  <div class="inset-0 fixed flex items-center pl-5">
+  <div class="hidden lg:flex inset-0 fixed items-center pl-5">
     <div ref="colorMenu"
-      class="group z-2 w-10 flex flex-col overflow-hidden rounded-full bg-white p-1 drop-shadow-lg transition-all duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] space-y-2"
+      class="group w-10 flex flex-col overflow-hidden rounded-full bg-white p-1 drop-shadow-lg transition-all duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] space-y-2"
       :class="{ 'h-170': colorMenuState, 'h-10': !colorMenuState }">
       <template v-if="colorMenuState">
         <button v-for="color in colors" :key="color.name" :style="{ background: `rgb(${color.value})` }"

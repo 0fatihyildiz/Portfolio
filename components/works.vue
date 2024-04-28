@@ -10,7 +10,7 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
   <section id="works" class="wContainer">
     <div v-for="(work, idx) in github_repos" :key="idx" class="work">
       <NuxtLink class="content group" :to="work.link">
-        <div class="flex justify-between px-8 py-6">
+        <div class="flex items-start justify-between px-8 py-6">
           <div class="flex flex-col justify-center">
             <h1 class="title">
               {{ work.name.split('-').join(' ') }}

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { animateKeyframes, initialKeyframes, transition } from '@/composables/animation'
-</script>
-
 <template>
   <section class="relative">
     <div class="flex flex-col py-24 space-y-4">
@@ -12,7 +8,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.4)">
-          <h1 class="title !text-2xl sm:!text-5xl">
+          <h1 class="title !text-2xl lg:!text-4xl">
             I'm a <span class="text-[rgba(var(--primary),1)]">{{ config.job_title }}</span> from
             <span class="text-black">Turkey</span>
           </h1>
@@ -29,7 +25,7 @@ import { animateKeyframes, initialKeyframes, transition } from '@/composables/an
 
 <style lang="postcss" scoped>
     .title{
-        @apply text-left inline-block relative text-6xl sm:text-8xl font-bold text-zinc-600 tracking-tight;
+        @apply text-left inline-block relative text-7xl lg:text-8xl font-bold text-zinc-600 tracking-tight;
 
         &.highlight{
             @apply p-4 border border-zinc-900/70 rounded-lg before:(top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 content-[''] absolute w-full h-full rotate-2 rounded-lg bg-[rgba(var(--primary),0.5)] -z-10 pointer-events-none);
