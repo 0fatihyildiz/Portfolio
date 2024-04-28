@@ -6,6 +6,20 @@ const client = useDevtoolsClient()
 const configFreezed = JSON.parse(JSON.stringify(config))
 
 const reactiveConfig = ref(config)
+
+async function saveHandle() {
+  const response = await $fetch('/api/save', {
+    // @ts-ignore
+    method: 'POST',
+    body: JSON.stringify(reactiveConfig.value),
+  })
+
+  if (response)
+    return console.log('Config saved', response)
+
+  console.error('Error saving config')
+
+}
 </script>
 
 <template>
@@ -13,6 +27,7 @@ const reactiveConfig = ref(config)
     <h1 class="text-3xl font-bold">
       Portfolio Module
     </h1>
+
     <div class="opacity-50 mb-4">
       This is a module for the portfolio editor
     </div>
@@ -20,7 +35,7 @@ const reactiveConfig = ref(config)
       v-if="client"
       class="flex flex-col gap-2"
     >
-      <div class="flex flex-col gap-2">
+      <form class="flex flex-col gap-2">
         <div class="flex gap-2 w-full">
           <NTextInput
             v-model="reactiveConfig.name"
@@ -46,10 +61,11 @@ const reactiveConfig = ref(config)
         <NButton
           :disabled="deepComprassion(reactiveConfig, configFreezed)"
           class="bg-green/20 text-green hover:bg-green/30 rounded-md py-1 px-4 disabled:(opacity-50 hover:bg-green/20)"
+          @click="() => saveHandle()"
         >
           Save
         </NButton>
-      </div>
+      </form>
     </div>
   </div>
 </template>
