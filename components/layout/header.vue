@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { useModalStore } from '~/store';
-
 const { y, directions } = useScroll(window)
 const direction = ref(false)
-const modals = useModalStore()
 
 const navigation = [
-  { name: 'Works', href: '#works' },
-  { name: 'About', href: '#about' },
+  { name: 'Works', href: '/#works' },
+  { name: 'About', href: '/#about' },
+  { name: 'Blogs', href: '/blogs' },
 ]
 
 const social = [
@@ -15,10 +13,9 @@ const social = [
   { icon: 'i-simple-icons-github', name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
 ]
 
-
 function handleCallMe() {
-  if (process.client)
-    window.location.href = "https://cal.com/fatihdev/30min";
+  if (import.meta.client)
+    window.location.href = 'https://cal.com/fatihdev/30min'
 }
 
 watchEffect(() => {
@@ -59,7 +56,7 @@ watchEffect(() => {
             target="_blank"
           >
             <i :class="link.icon" class="inline-block text-sm text-zinc-500 transition group-hover:text-primary" />
-            {{  link.name }}
+            {{ link.name }}
           </FormLink>
         </nav>
       </div>
