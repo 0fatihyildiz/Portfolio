@@ -99,7 +99,7 @@ function getHeight(el: HTMLParagraphElement) {
       }
 
       .title {
-        @apply text-xl font-medium text-left;
+        @apply text-lg md:text-xl font-medium text-left;
       }
 
       .description {
