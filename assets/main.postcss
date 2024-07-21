@@ -1,8 +1,8 @@
 :root {
   /* --primary: 255, 255, 255; */
-  --gradient-color-1: #fff; 
-  --gradient-color-2: #fff; 
-  --gradient-color-3: #fff;  
+  --gradient-color-1: #fff;
+  --gradient-color-2: #fff;
+  --gradient-color-3: #fff;
   /* --gradient-color-4: #fff; */
 }
 
@@ -48,4 +48,19 @@ section {
 
 .pattern {
   @apply min-w-48 flex-grow-0 flex justify-center bg-white/50 border border-zinc-100 overflow-hidden rounded-full px-12 py-6 relative after:(content-[''] h-12 w-12 bg-zinc-100 absolute -left-10 rotate-45 top-1/2 -translate-y-1/2) before:(content-[''] h-12 w-12 bg-zinc-100 absolute -right-10 rotate-45 top-1/2 -translate-y-1/2);
+}
+
+
+button,
+textarea,
+input,
+select,
+a{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    user-select: none;
 }

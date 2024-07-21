@@ -1,6 +1,6 @@
 <template>
   <section class="relative">
-    <div class="flex flex-col py-24 space-y-4">
+    <div class="flex flex-col px-4 py-24 space-y-4">
       <PresenceGroup>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.3)">
           <h1 class="title">
