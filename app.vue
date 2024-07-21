@@ -11,7 +11,6 @@ const isMounted = useMounted()
     <OtherColor />
     <OtherNoise />
     <OtherCookie />
-    <ModalContact />
     <NuxtLayout v-if="isMounted">
       <div class="content">
         <ClientOnly>
@@ -22,7 +21,7 @@ const isMounted = useMounted()
       </div>
     </NuxtLayout>
     <div class="inset-0 absolute bg-white z-30" v-else>
-      
+
     </div>
   </main>
 </template>

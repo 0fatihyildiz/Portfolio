@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { useModalStore } from '~/store';
 
-const modals = useModalStore()
-
 const about = reactive([
   {
     title: "What Influenced Your Path in Frontend and UI/UX, and How Do You Stay Proficient?",
@@ -67,11 +65,6 @@ function getHeight(el: HTMLParagraphElement) {
             {{ question.description }}
           </p>
         </div>
-      </button>
-    </div>
-    <div class="mx-auto w-full flex justify-center pt-12">
-      <button class="btn" @click="() => modals.contact = true">
-        Contact Me
       </button>
     </div>
   </section>

@@ -3,7 +3,7 @@ import config from "../../../composables/config";
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 
 const client = useDevtoolsClient()
-const configFreezed = JSON.parse(JSON.stringify(config))
+const configFreezed = ref(JSON.parse(JSON.stringify(config)))
 
 const reactiveConfig = ref(config)
 
@@ -15,9 +15,7 @@ async function saveHandle() {
   })
 
   if (response)
-    return console.log('Config saved', response)
-
-  console.error('Error saving config')
+    return configFreezed.value = JSON.parse(JSON.stringify(reactiveConfig.value))
 
 }
 </script>
@@ -37,6 +35,15 @@ async function saveHandle() {
     >
       <form class="flex flex-col gap-2">
         <div class="flex gap-2 w-full">
+          <!-- <NSelectTabs
+            v-model="filterMode"
+            n="primary sm"
+            :options="[
+              { label: 'All', value: 'all' },
+              { label: 'Using', value: 'using' },
+              { label: 'Not used', value: 'not-used' },
+            ]"
+          /> -->
           <NTextInput
             v-model="reactiveConfig.name"
             placeholder="Name and Surname"

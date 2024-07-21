@@ -15,6 +15,12 @@ const social = [
   { icon: 'i-simple-icons-github', name: 'GitHub', href: 'https://github.com/0fatihyildiz' },
 ]
 
+
+function handleCallMe() {
+  if (process.client)
+    window.location.href = "https://cal.com/fatihdev/30min";
+}
+
 watchEffect(() => {
   if (directions.top)
     direction.value = true
@@ -57,8 +63,8 @@ watchEffect(() => {
           </FormLink>
         </nav>
       </div>
-      <button class="btn" @click="() => modals.contact = true">
-        Contact Me
+      <button class="btn" @click="handleCallMe">
+        Contact me
       </button>
     </div>
     <button class="flex items-center rounded-full px-4 py-1 md:hidden hover:bg-zinc-500/5">
