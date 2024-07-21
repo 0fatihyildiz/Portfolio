@@ -30,43 +30,45 @@ function getHeight(el: HTMLParagraphElement) {
 </script>
 
 <template>
-  <section id="about" class="aContainer">
-    <div class="titleWrap">
-      <div class="pattern">
-        <OtherPattern class="h-12 w-12 text-zinc-950" />
+  <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.8)">
+    <section id="about" class="aContainer">
+      <div class="titleWrap">
+        <div class="pattern">
+          <OtherPattern class="h-12 w-12 text-zinc-950" />
+        </div>
+        <h2 class="title">
+          Your questions, answered
+        </h2>
+        <p class="description">
+          Answers to the most frequently asked questions.
+        </p>
       </div>
-      <h2 class="title">
-        Your questions, answered
-      </h2>
-      <p class="description">
-        Answers to the most frequently asked questions.
-      </p>
-    </div>
-    <div class="acordions">
-      <button
-        v-for="(question, index) in about"
-        :key="index"
-        class="acordion"
-        :class="{ active: question.active }"
-        @click="toggleAcordion(index)"
-      >
-        <div class="w-full flex items-center justify-between">
-          <h1 class="title">
-            {{ question.title }}
-          </h1>
-          <div class="i-ph-x-bold h-4 w-4 flex-shrink-0 transition duration-300" :class="question.active ? 'rotate-0 opacity-100' : 'rotate-45 opacity-70' " />
-        </div>
-        <div class="overflow-hidden transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
-          <p
-            :ref="(el) => (acordionAnswerEl[index] = el)"
-            class="description"
-          >
-            {{ question.description }}
-          </p>
-        </div>
-      </button>
-    </div>
-  </section>
+      <div class="acordions">
+        <button
+          v-for="(question, index) in about"
+          :key="index"
+          class="acordion"
+          :class="{ active: question.active }"
+          @click="toggleAcordion(index)"
+        >
+          <div class="w-full flex items-center justify-between">
+            <h1 class="title">
+              {{ question.title }}
+            </h1>
+            <div class="i-ph-x-bold h-4 w-4 flex-shrink-0 transition duration-300" :class="question.active ? 'rotate-0 opacity-100' : 'rotate-45 opacity-70' " />
+          </div>
+          <div class="overflow-hidden transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
+            <p
+              :ref="(el) => (acordionAnswerEl[index] = el)"
+              class="description"
+            >
+              {{ question.description }}
+            </p>
+          </div>
+        </button>
+      </div>
+    </section>
+  </Motion>
 </template>
 
 <style lang="postcss" scoped>

@@ -10,6 +10,6 @@ const random = (Math.floor(Math.random() * 60) + 1)
       :value="String(random)"
       :size="100"
     /> -->
-    <div class="i-ph-x-bold h-12 w-12" />
+    <div class="i-svg-spinners:wind-toy h-12 w-12" />
   </ClientOnly>
 </template>
