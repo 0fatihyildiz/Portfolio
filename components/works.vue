@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { PinnedRepos } from '~/server/types';
+import type { PinnedRepos } from '~/server/types'
 
 const githubUsername = config.socials.find(item => item.name === 'Github')?.username
 
@@ -10,7 +10,7 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
   <section id="works" class="wContainer">
     <div v-for="(work, idx) in github_repos" :key="idx" class="work">
       <NuxtLink class="content group" :to="work.link">
-        <div class="flex items-start justify-between px-8 py-6">
+        <div class="flex items-start justify-between gap-2 px-8 py-6">
           <div class="flex flex-col justify-center">
             <h1 class="title">
               {{ work.name.split('-').join(' ') }}
@@ -19,9 +19,11 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
               {{ work.description }}
             </p>
           </div>
-          <a :href="work.link"
-            class="border border-zinc-200 rounded-full p-2 transition group-hover:(border-transparent bg-[rgba(var(--primary),0.4)])">
-            <div class="i-ph-arrow-up-right h-12 w-12" />
+          <a
+            :href="work.link"
+            class="border border-zinc-200 rounded-full p-2 transition group-hover:(border-transparent bg-[rgba(var(--primary),0.4)])"
+          >
+            <div class="i-ph-arrow-up-right h-8 w-8 md:h-12 md:w-12" />
           </a>
         </div>
         <div class="photoContainer">
@@ -68,7 +70,7 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
       @apply w-full md:w-2/3 bg-white/50 backdrop-blur-lg rounded-xl shadow-sm flex flex-col gap-2 p-4 transition duration-300 ease-in-out hover:(bg-neutral-50);
 
       .title {
-        @apply text-4xl font-semibold capitalize;
+        @apply text-2xl md:text-4xl font-semibold capitalize;
       }
 
       .description {

@@ -77,10 +77,10 @@ function getHeight(el: HTMLParagraphElement) {
     @apply mx-auto flex flex-col space-y-4 items-center mb-10 lg:mb-14;
 
     .title {
-      @apply text-2xl font-bold md:text-4xl md:leading-tight dark:text-white;
+      @apply text-2xl font-bold sm:text-3xl md:text-4xl md:leading-tight dark:text-white;
     }
     .description {
-      @apply mt-1 text-gray-600;
+      @apply mt-1 text-gray-600 text-center;
     }
   }
 
