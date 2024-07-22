@@ -11,7 +11,7 @@ const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsern
     <PresenceGroup>
       <Motion v-for="(work, idx) in github_repos" :key="idx" class="work" :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.7)">
         <NuxtLink class="content group" :to="work.link">
-          <div class="flex items-start justify-between gap-2 px-8 py-6">
+          <div class="flex items-start justify-between gap-2 px-4 py-6">
             <div class="flex flex-col justify-center">
               <h1 class="title">
                 {{ work.name.split('-').join(' ') }}
