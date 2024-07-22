@@ -2,6 +2,7 @@
 const { y, directions } = useScroll(window)
 const direction = ref(false)
 const mobileMenuRef = ref<HTMLDivElement>()
+const header = ref<HTMLHeadingElement>()
 const navigation = [
   { name: 'Works', href: '/#works' },
   { name: 'About', href: '/#about' },
@@ -27,7 +28,7 @@ function getHeight(el: HTMLDivElement) {
 
 const mobileMenuHeight = computed(() => mobileMenuRef.value ? getHeight(mobileMenuRef.value) : 0)
 
-onClickOutside(mobileMenuRef, () => mobileMenu.value = false)
+onClickOutside(header, () => mobileMenu.value = false)
 
 watchEffect(() => {
   if (mobileMenu.value)
@@ -41,7 +42,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <header class="flex flex-col overflow-hidden" :class="[{ active: direction }]">
+  <header ref="header" class="flex flex-col overflow-hidden" :class="[{ active: direction }]">
     <div class="w-full flex items-center justify-between">
       <NuxtLink class="flex-shrink-0" to="/">
         <img

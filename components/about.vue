@@ -87,7 +87,7 @@ function getHeight(el: HTMLParagraphElement) {
   }
 
   .acordions {
-    @apply mx-auto space-y-4;
+    @apply mx-auto space-y-4 overflow-hidden;
 
     .acordion {
       @apply transition-all ease-in-out rounded-xl p-6 border border-zinc-100 w-full flex flex-col scale-100 cursor-pointer;
