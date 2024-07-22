@@ -1,9 +1,16 @@
 <script lang="ts" setup>
 import type { PinnedRepos } from '~/server/types'
+import { useGeneralStore } from '~/store'
+
+const store = useGeneralStore()
 
 const githubUsername = config.socials.find(item => item.name === 'Github')?.username
 
-const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsername}`)
+store.isLoading = true
+
+const { data: github_repos } = await useFetch<PinnedRepos[]>(`/api/${githubUsername}`).then().finally(() => {
+  store.isLoading = false
+})
 </script>
 
 <template>

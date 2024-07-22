@@ -27,6 +27,8 @@ function getHeight(el: HTMLDivElement) {
 
 const mobileMenuHeight = computed(() => mobileMenuRef.value ? getHeight(mobileMenuRef.value) : 0)
 
+onClickOutside(mobileMenuRef, () => mobileMenu.value = false)
+
 watchEffect(() => {
   if (mobileMenu.value)
     return direction.value = true

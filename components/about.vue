@@ -57,7 +57,7 @@ function getHeight(el: HTMLParagraphElement) {
             </h1>
             <div class="i-ph-x-bold h-4 w-4 flex-shrink-0 transition duration-300" :class="question.active ? 'rotate-0 opacity-100' : 'rotate-45 opacity-70' " />
           </div>
-          <div class="overflow-hidden transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
+          <div class="transition-all" :style="{ height: question.active ? `${getHeight(acordionAnswerEl[index])}px` : 0 }">
             <p
               :ref="(el) => (acordionAnswerEl[index] = el)"
               class="description"
