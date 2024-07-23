@@ -34,7 +34,7 @@ function getHeight(el: HTMLParagraphElement) {
     <section id="about" class="aContainer">
       <div class="titleWrap">
         <div class="pattern">
-          <OtherPattern class="h-12 w-12 text-zinc-950" />
+          <OtherPattern class="h-6 w-6 text-zinc-950 md:h-12 md:w-12" />
         </div>
         <h2 class="title">
           Your questions, answered
@@ -73,7 +73,7 @@ function getHeight(el: HTMLParagraphElement) {
 
 <style lang="postcss" scoped>
 .aContainer {
-  @apply bg-white/50 backdrop-blur-lg md:rounded-xl shadow-sm sm:px-6 py-10 mt-10 md:px-6 lg:px-8 lg:py-14 mx-auto;
+  @apply bg-white/50 backdrop-blur-lg rounded-xl shadow-sm sm:px-6 py-10 mt-10 md:px-6 lg:px-8 lg:py-14 mx-auto;
 
   .titleWrap {
     @apply mx-auto flex flex-col space-y-4 items-center mb-10 lg:mb-14;
@@ -90,7 +90,7 @@ function getHeight(el: HTMLParagraphElement) {
     @apply mx-auto divide-y md:divide-y-0 md:space-y-4 overflow-hidden;
 
     .acordion {
-      @apply transition-all ease-in-out rounded-xl p-6 md:border md:border-zinc-100 w-full flex flex-col scale-100 cursor-pointer;
+      @apply transition-all ease-in-out md:rounded-xl p-6 md:border md:border-zinc-100 w-full flex flex-col scale-100 cursor-pointer;
 
       &.active {
         @apply bg-gray-50 scale-102 pb-12;

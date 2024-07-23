@@ -41,9 +41,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    optimizeDeps: {
-      disabled: true,
-    },
   },
 
   css: ['~/assets/main.postcss'],
@@ -91,5 +88,11 @@ export default defineNuxtConfig({
     exportExpose: true,
   },
 
+  runtimeConfig: {
+    public: {
+      postivaApiKey: process.env.NUXT_POSTIVA_API_KEY,
+      postivaWorkspaceID: process.env.NUXT_POSTIVA_WORKSPACE_ID,
+    },
+  },
   compatibilityDate: '2024-07-21',
 })

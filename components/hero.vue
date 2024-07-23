@@ -10,7 +10,7 @@
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.4)">
           <h1 class="title !text-2xl md:!text-4xl">
             I'm a <span class="text-[rgba(var(--primary),1)]">{{ config?.job_title }}</span> from
-            <span class="text-black">Turkey</span>
+            <span class="text-black">{{ config.from }}</span>
           </h1>
         </Motion>
         <Motion :initial="initialKeyframes" :animate="animateKeyframes" :transition="transition(0.5)">
